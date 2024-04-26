@@ -1,8 +1,7 @@
 .. toctree::
    :hidden:
-   :maxdepth: 2
 
-   tutorial
+   tutorial/index
    usage
    api
 
