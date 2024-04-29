@@ -2,8 +2,6 @@
    :hidden:
 
    tutorial/index
-   usage
-   api
 
 Welcome to LightningSim's documentation!
 ========================================
