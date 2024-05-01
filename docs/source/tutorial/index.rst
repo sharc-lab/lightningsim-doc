@@ -8,9 +8,9 @@ Tutorial
   setup-local
   install
   ex1-end-to-end
-  ex2-more-complex
+  ex2-hls-fail
   ex3-deadlock
-  ex4-hls-fail
+  ex4-more-complex
   ex5-fifo-latency
 
 In this tutorial, we will walk through the process of installing and running LightningSim for several small example Vitis HLS projects and comparing their results with C/RTL co-simulation.
