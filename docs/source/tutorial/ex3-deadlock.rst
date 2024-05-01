@@ -21,15 +21,15 @@ Wait for synthesis to complete. *Is there any indication of whether this design 
 
 Wait for LightningSim to complete. *What about now?*
 
-**Step 4.** Switch to the :guilabel:`Overview` tab of LightningSim and observe the :guilabel:`Latency` and :guilabel:`Optimal` columns. *What do you see?*
+**Step 4.** Switch to the :guilabel:`Overview` tab of LightningSim and observe the **Latency** and **Optimal** columns. *What do you see?*
 
 .. note::
-  :guilabel:`Optimal` is an estimate of the best possible latency the design can achieve if there are no deadlocks and all FIFO buffers are sized correctly.
+  **Optimal** is an estimate of the best possible latency the design can achieve if there are no deadlocks and all FIFO buffers are sized correctly.
 
-**Step 5.** Now switch to the :guilabel:`FIFOs` tab of LightningSim and observe the :guilabel:`Depth` and :guilabel:`Optimal` columns.
+**Step 5.** Now switch to the :guilabel:`FIFOs` tab of LightningSim and observe the **Depth** and **Optimal** columns.
 
 .. note::
-  :guilabel:`Depth` is initially set to the same value the design was synthesized with. :guilabel:`Optimal` reports a possible FIFO configuration that will avoid deadlocks and result in the optimal latency reported in the :guilabel:`Overview` tab.
+  **Depth** is initially set to the same value the design was synthesized with. **Optimal** reports a possible FIFO configuration that will avoid deadlocks and result in the optimal latency reported in the :guilabel:`Overview` tab.
 
 **Step 6.** Adjust the FIFO depths to match the optimal values. *What do you notice about the time it takes to re-run the simulation with each new depth?*
 
