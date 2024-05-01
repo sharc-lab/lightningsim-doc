@@ -1,5 +1,5 @@
-Ex. 1: End-to-End Flow
-======================
+End-to-End Flow
+===============
 
 We will now demonstrate the end-to-end LightningSim workflow with a Vitis HLS project implementing a simple matrix multiplication kernel. This example is derived from |Parallel Programming for FPGAs|_.
 
@@ -39,13 +39,13 @@ By default, LightningSim will wait for you to start a synthesis run before runni
 
 Wait for synthesis to complete. Notice LightningSim automatically starts simulation a few seconds into the synthesis process.
 
-**Step 5.** As soon as synthesis is complete, click the down arrow next to the green play button, and select :guilabel:`Co-Simulation` to start C/RTL co-simulation.
+**Step 5.** As soon as synthesis is complete, click the down arrow next to the green play button, and select :guilabel:`Co-Simulation` to start C/RTL cosimulation.
 
-Wait for both co-simulation and LightningSim to complete. *Which completes first? By how much?*
+Wait for both cosimulation and LightningSim to complete. *Which completes first? By how much?*
 
-**Step 6.** Navigate to the :guilabel:`Output` tab of LightningSim and observe the testbench output. *Did the simulated testbench pass? Does this match the co-simulation status?*
+**Step 6.** Navigate to the :guilabel:`Output` tab of LightningSim and observe the testbench output. *Did the simulated testbench pass? Does this match the cosimulation status?*
 
-**Step 7.** Navigate to the :guilabel:`Overview` tab of LightningSim. *Are the reported latencies the same between LightningSim and co-simulation?*
+**Step 7.** Navigate to the :guilabel:`Overview` tab of LightningSim. *Are the reported latencies the same between LightningSim and cosimulation?*
 
 **Step 8.** Our kernel is apparently taking 32,771 cycles to complete during this simulation. Let's see if there are any easy ways to extract more performance from this design.
 
@@ -63,9 +63,9 @@ LightningSim starts waiting for the next run of HLS synthesis.
 
 **Step 12.** When you are finished with this example, close the Vitis HLS project by selecting :guilabel:`File` > :guilabel:`Close Project...`. Stop LightningSim by returning to the terminal you launched it from and interrupting the process with :kbd:`Ctrl` + :kbd:`C`.
 
-----------
-Conclusion
-----------
+-----
+Recap
+-----
 
 In this example, you saw how to run LightningSim on a Vitis HLS project and use it within a development workflow. However, you may have noticed that this example was simple enough that simulation was not necessary---the HLS report itself already provided a very close estimate of the cycle count.
 

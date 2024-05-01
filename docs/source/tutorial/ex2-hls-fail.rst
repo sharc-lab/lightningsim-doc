@@ -1,5 +1,5 @@
-Ex. 2: When Simulation is Needed
-================================
+When Cosimulation is Needed
+===========================
 
 Sometimes HLS isn't able to figure out the latency of a kernel through static analysis. We will see one such example here.
 
@@ -20,27 +20,30 @@ Walkthrough
 
   lightningsim ~/examples/example-2/solution1
 
+Hold :kbd:`Ctrl` and click the link printed in the terminal to open the LightningSim UI in your default browser.
+
 **Step 3.** Within Vitis HLS, click the green play button to synthesize the design.
 
 Wait for synthesis to complete. *What does the synthesis report say about the latency of the kernel?*
 
-**Step 4.** As soon as synthesis is complete, start C/RTL co-simulation from the down arrow next to the play button > :guilabel:`Co-Simulation`.
+**Step 4.** As soon as synthesis is complete, start C/RTL cosimulation from the down arrow next to the play button > :guilabel:`Co-Simulation`.
 
-Wait for co-simulation to complete. *How long does it take to complete, compared to LightningSim?*
+Wait for cosimulation to complete. *How long does it take to complete, compared to LightningSim?*
 
-**Step 5.** Switch to the :guilabel:`Overview` tab of LightningSim, and compare its results to the co-simulation results.
+**Step 5.** Switch to the :guilabel:`Overview` tab of LightningSim, and compare its results to the cosimulation results.
 
 .. note::
+
   You'll notice that the cycle counts differ slightly. This is one of the cases in which LightningSim does not achieve 100%-accurate results.
 
   This discrepancy is due to inaccuracies in the AXI model used by LightningSim. We hope to improve this in the future (along with updating the AXI model for the latest versions of Vitis HLS).
 
-  However, LightningSim still boasts 99.9% cycle-accuracy compared to co-simulation on Vitis HLS 2021.1 on a suite of 33 benchmarks. If you notice a large discrepancy between LightningSim and co-simulation on one of your projects, `please let us know <https://github.com/sharc-lab/LightningSim/issues/new>`_!
+  However, LightningSim still boasts 99.9% cycle-accuracy compared to cosimulation on Vitis HLS 2021.1 on a suite of 33 benchmarks. If you notice a large discrepancy between LightningSim and cosimulation on one of your projects, `please let us know <https://github.com/sharc-lab/LightningSim/issues/new>`_!
 
 **Step 6.** When you are finished with this example, close the Vitis HLS project by selecting :guilabel:`File` > :guilabel:`Close Project...`. Stop LightningSim by returning to the terminal you launched it from and interrupting the process with :kbd:`Ctrl` + :kbd:`C`.
 
-----------
-Conclusion
-----------
+-----
+Recap
+-----
 
-In this example, you saw how LightningSim can provide early simulation results that are 99.9%-accurate to co-simulation, even when HLS synthesis cannot provide any useful information about latency. This can be very useful when developing designs where the latency is data-dependent.
+In this example, you saw how LightningSim can provide early simulation results that are 99.9%-accurate to cosimulation, even when HLS synthesis cannot provide any useful information about latency. This can be very useful when developing designs where the latency is data-dependent.

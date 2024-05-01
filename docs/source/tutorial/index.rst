@@ -1,20 +1,13 @@
-Tutorial
-========
+FCCM 2024 Tutorial
+==================
 
-.. toctree::
-  :hidden:
+Welcome to the tutorial for the `32nd IEEE International Symposium On Field-Programmable Custom Computing Machines (FCCM) <https://www.fccm.org/>`_. This session focuses on "Understanding Your FPGA Design Better: From Rapid Simulation to On-board Profiling." More information about this tutorial is available on the `Sharc Lab website <https://sharclab.ece.gatech.edu/open-source-projects/>`_.
 
-  setup-crnch
-  setup-local
-  install
-  ex1-end-to-end
-  ex2-hls-fail
-  ex3-deadlock
-  ex4-more-complex
-  ex5-fifo-latency
 
-In this tutorial, we will walk through the process of installing and running LightningSim for several small example Vitis HLS projects and comparing their results with C/RTL co-simulation.
+.. image:: /images/logo.png
+  :alt: The LightningSim logo.
+  :width: 250
 
-**If you are attending this tutorial in-person at FCCM 2024:** We will be using resources graciously provided by Dr. Jeff Young at the `Center for Research into Novel Compute Hierarchies <https://crnch.gatech.edu/>`_ at Georgia Tech. Continue to :doc:`login to the system <setup-crnch>`.
+This part of the tutorial is dedicated to ⚡LightningSim, an ultra-fast and accurate trace-based simulator for High-Level Synthesis (HLS) designs. We will walk through the process of installing and running LightningSim for several example Vitis HLS projects and comparing their results with C/RTL cosimulation.
 
-**If you are following this tutorial remotely:** You will need access to a machine meeting the `LightningSim system requirements <https://github.com/sharc-lab/LightningSim/blob/v0.2.0/README.md#system-requirements>`_. Proceed to :doc:`setup your local environment <setup-local>`.
+If you are interested in the second half of the tutorial about RealProbe🔍, a fully automated on-board profiling tool to measure real on-FPGA performance with ease, please visit the `RealProbe tutorial <https://realprobe-doc.readthedocs.io/en/latest/tutorial/tutorial.html>`_.

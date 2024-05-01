@@ -5,7 +5,7 @@ LightningSim is packaged for the `conda package manager <https://docs.conda.io/p
 
 Using conda, LightningSim can be installed with one command, as documented on `its homepage <https://github.com/sharc-lab/LightningSim?tab=readme-ov-file#installation>`_. Open a terminal and enter the following::
 
-  conda create --yes --name lightningsim --channel https://sharc-lab.github.io/LightningSim/repo --channel conda-forge lightningsim
+  conda create -y -n lightningsim -c https://sharc-lab.github.io/LightningSim/repo -c conda-forge lightningsim
 
 This command creates a conda environment named :code:`lightningsim` with the :code:`lightningsim` package (and all its dependencies) installed.
 

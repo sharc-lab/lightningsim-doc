@@ -1,5 +1,5 @@
-Ex. 3: Exploring Deadlocks
-==========================
+Exploring Deadlocks
+===================
 
 Here, we introduce LightningSim's powerful features for dataflow designs using FIFO channels. We will see how LightningSim can provide early feedback on deadlocks in dataflow designs and even suggest a resolution.
 
@@ -15,6 +15,8 @@ Walkthrough
 
   lightningsim ~/examples/example-3/solution1
 
+Hold :kbd:`Ctrl` and click the link printed in the terminal to open the LightningSim UI in your default browser.
+
 **Step 3.** Within Vitis HLS, click the green play button to synthesize the design.
 
 Wait for synthesis to complete. *Is there any indication of whether this design might deadlock?*
@@ -24,11 +26,13 @@ Wait for LightningSim to complete. *What about now?*
 **Step 4.** Switch to the :guilabel:`Overview` tab of LightningSim and observe the **Latency** and **Optimal** columns. *What do you see?*
 
 .. note::
+
   **Optimal** is an estimate of the best possible latency the design can achieve if there are no deadlocks and all FIFO buffers are sized correctly.
 
 **Step 5.** Now switch to the :guilabel:`FIFOs` tab of LightningSim and observe the **Depth** and **Optimal** columns.
 
 .. note::
+
   **Depth** is initially set to the same value the design was synthesized with. **Optimal** reports a possible FIFO configuration that will avoid deadlocks and result in the optimal latency reported in the :guilabel:`Overview` tab.
 
 **Step 6.** Adjust the FIFO depths to match the optimal values. *What do you notice about the time it takes to re-run the simulation with each new depth?*
@@ -43,8 +47,8 @@ LightningSim will indicate that there is no longer a deadlock.
 
 **Step 10.** When you are finished with this example, close the Vitis HLS project by selecting :guilabel:`File` > :guilabel:`Close Project...`. Stop LightningSim by returning to the terminal you launched it from and interrupting the process with :kbd:`Ctrl` + :kbd:`C`.
 
-----------
-Conclusion
-----------
+-----
+Recap
+-----
 
-In this example, you saw a small taste of LightningSim's powerful features for HLS dataflow designs. The next examples will demonstrate these capabilities on more designs.
+In this example, you saw a small taste of LightningSim's powerful features for HLS dataflow designs. You will see these capabilities demonstrated again in the next examples.
