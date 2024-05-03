@@ -35,7 +35,7 @@ Wait for LightningSim to complete. *What about now?*
 
   **Depth** is initially set to the same value the design was synthesized with. **Optimal** reports a possible FIFO configuration that will avoid deadlocks and result in the optimal latency reported in the :guilabel:`Overview` tab.
 
-**Step 6.** Adjust the FIFO depths to match the optimal values. *What do you notice about the time it takes to re-run the simulation with each new depth?*
+**Step 6.** For any FIFO depth below its optimal value, increase it to match. *What do you notice about the time it takes to re-run the simulation with a new FIFO depth?*
 
 LightningSim will indicate that there is no longer a deadlock.
 
