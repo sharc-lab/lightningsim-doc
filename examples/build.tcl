@@ -10,10 +10,10 @@ close_solution
 close_project
 
 open_project -reset example-2
-add_files {example-2/huffman_canonize_tree.cpp example-2/huffman_create_tree.cpp example-2/huffman_filter.cpp example-2/huffman_compute_bit_length.cpp example-2/huffman_encoding.cpp example-2/huffman_sort.cpp example-2/huffman_create_codeword.cpp example-2/huffman_truncate_tree.cpp}
-add_files -tb {example-2/huffman_encoding_test.cpp}
-add_files -tb {example-2/huffman.random256.txt example-2/huffman.random256.golden}
-set_top huffman_encoding
+add_file example-2/fft_stages.cpp
+add_file -tb example-2/fft_stages-top.cpp
+add_file -tb example-2/out.fft.gold.dat
+set_top fft_streaming
 open_solution -reset solution1
 set_part xczu7ev-ffvc1156-2-e
 create_clock -period 5
