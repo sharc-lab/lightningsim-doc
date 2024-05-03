@@ -1,0 +1,266 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'load_graph_Pipeline_VITIS_LOOP_145_5'" level="0">
+<item name = "Date">Fri May  3 00:25:21 2024
+</item>
+<item name = "Version">2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)</item>
+<item name = "Project">example-4</item>
+<item name = "Solution">solution1 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu50-fsvh2104-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33 ns, 2.288 ns, 0.90 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">23, 23, 76.659 ns, 76.659 ns, 23, 23, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_145_5">21, 21, 4, 1, 1, 19, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 664, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 195, -</column>
+<column name="Register">-, -, 770, 32, -</column>
+<specialColumn name="Available SLR">1344, 2976, 871680, 435840, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">2688, 5952, 1743360, 871680, 640</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="acc_1_fu_528_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln145_fu_460_p2">+, 0, 0, 38, 31, 1</column>
+<column name="add_ln158_1_fu_574_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln158_2_fu_628_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln158_3_fu_677_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln158_fu_533_p2">+, 0, 0, 39, 32, 32</column>
+<column name="num_of_nodes_per_pe_1_fu_600_p2">+, 0, 0, 39, 32, 1</column>
+<column name="num_of_nodes_per_pe_2_fu_654_p2">+, 0, 0, 39, 32, 1</column>
+<column name="num_of_nodes_per_pe_3_fu_703_p2">+, 0, 0, 39, 32, 1</column>
+<column name="num_of_nodes_per_pe_fu_554_p2">+, 0, 0, 39, 32, 1</column>
+<column name="and_ln168_1_fu_921_p2">and, 0, 0, 8, 8, 8</column>
+<column name="and_ln168_2_fu_927_p2">and, 0, 0, 8, 8, 8</column>
+<column name="and_ln168_fu_909_p2">and, 0, 0, 8, 8, 8</column>
+<column name="ap_condition_262">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_700">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_704">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_708">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_712">and, 0, 0, 2, 1, 1</column>
+<column name="addr_cmp_fu_731_p2">icmp, 0, 0, 29, 64, 64</column>
+<column name="icmp_ln145_fu_454_p2">icmp, 0, 0, 19, 31, 31</column>
+<column name="icmp_ln160_1_fu_579_p2">icmp, 0, 0, 20, 32, 1</column>
+<column name="icmp_ln160_2_fu_633_p2">icmp, 0, 0, 20, 32, 1</column>
+<column name="icmp_ln160_3_fu_682_p2">icmp, 0, 0, 20, 32, 1</column>
+<column name="icmp_ln160_fu_481_p2">icmp, 0, 0, 20, 32, 1</column>
+<column name="icmp_ln168_fu_807_p2">icmp, 0, 0, 8, 3, 3</column>
+<column name="lshr_ln168_fu_903_p2">lshr, 0, 0, 16, 2, 8</column>
+<column name="empty_362_fu_801_p2">or, 0, 0, 3, 3, 2</column>
+<column name="or_ln168_fu_933_p2">or, 0, 0, 8, 8, 8</column>
+<column name="reuse_select_fu_787_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln168_1_fu_839_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln168_2_fu_847_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln168_3_fu_889_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln168_fu_831_p3">select, 0, 0, 4, 1, 4</column>
+<column name="shl_ln168_1_fu_897_p2">shl, 0, 0, 16, 2, 8</column>
+<column name="shl_ln168_fu_873_p2">shl, 0, 0, 16, 8, 8</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln168_1_fu_855_p2">xor, 0, 0, 4, 4, 3</column>
+<column name="xor_ln168_2_fu_915_p2">xor, 0, 0, 8, 2, 8</column>
+<column name="xor_ln168_fu_825_p2">xor, 0, 0, 4, 4, 3</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="acc_fu_118">9, 2, 32, 64</column>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter3">9, 2, 1, 2</column>
+<column name="ap_phi_mux_node_pes_V_5_phi_fu_385_p4">14, 3, 4, 12</column>
+<column name="ap_phi_mux_node_pes_V_7_phi_fu_367_p4">14, 3, 2, 6</column>
+<column name="ap_phi_mux_node_pes_V_8_phi_fu_356_p4">9, 2, 1, 2</column>
+<column name="ap_phi_reg_pp0_iter2_node_pes_V_8_reg_352">9, 2, 1, 2</column>
+<column name="ap_phi_reg_pp0_iter3_node_pes_V_6_reg_373">14, 3, 3, 9</column>
+<column name="ap_sig_allocacmp_i">9, 2, 31, 62</column>
+<column name="empty_359_fu_126">9, 2, 32, 64</column>
+<column name="empty_360_fu_130">9, 2, 32, 64</column>
+<column name="empty_361_fu_134">9, 2, 32, 64</column>
+<column name="empty_fu_122">9, 2, 32, 64</column>
+<column name="i_3_fu_138">9, 2, 31, 62</column>
+<column name="pe_num_of_nodes_1_fu_146">9, 2, 32, 64</column>
+<column name="pe_num_of_nodes_2_fu_150">9, 2, 32, 64</column>
+<column name="pe_num_of_nodes_3_fu_154">9, 2, 32, 64</column>
+<column name="pe_num_of_nodes_fu_142">9, 2, 32, 64</column>
+<column name="reuse_addr_reg_fu_110">9, 2, 64, 128</column>
+<column name="reuse_reg_fu_114">9, 2, 8, 16</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="acc_fu_118">32, 0, 32, 0</column>
+<column name="addr_cmp_reg_1143">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter1_node_pes_V_6_reg_373">3, 0, 3, 0</column>
+<column name="ap_phi_reg_pp0_iter1_node_pes_V_8_reg_352">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter2_node_pes_V_6_reg_373">3, 0, 3, 0</column>
+<column name="ap_phi_reg_pp0_iter2_node_pes_V_8_reg_352">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter3_node_pes_V_6_reg_373">3, 0, 3, 0</column>
+<column name="degree_j_1_reg_1094">32, 0, 32, 0</column>
+<column name="degree_j_2_reg_1101">32, 0, 32, 0</column>
+<column name="degree_j_3_reg_1108">32, 0, 32, 0</column>
+<column name="degree_j_reg_1084">32, 0, 32, 0</column>
+<column name="degree_reg_1079">32, 0, 32, 0</column>
+<column name="empty_359_fu_126">32, 0, 32, 0</column>
+<column name="empty_360_fu_130">32, 0, 32, 0</column>
+<column name="empty_361_fu_134">32, 0, 32, 0</column>
+<column name="empty_fu_122">32, 0, 32, 0</column>
+<column name="i_3_cast104_reg_1060">31, 0, 64, 33</column>
+<column name="i_3_cast104_reg_1060_pp0_iter1_reg">31, 0, 64, 33</column>
+<column name="i_3_fu_138">31, 0, 31, 0</column>
+<column name="i_reg_1049">31, 0, 31, 0</column>
+<column name="i_reg_1049_pp0_iter1_reg">31, 0, 31, 0</column>
+<column name="icmp_ln145_reg_1056">1, 0, 1, 0</column>
+<column name="icmp_ln160_3_reg_1133">1, 0, 1, 0</column>
+<column name="icmp_ln160_reg_1090">1, 0, 1, 0</column>
+<column name="pe_num_of_nodes_1_fu_146">32, 0, 32, 0</column>
+<column name="pe_num_of_nodes_2_fu_150">32, 0, 32, 0</column>
+<column name="pe_num_of_nodes_3_fu_154">32, 0, 32, 0</column>
+<column name="pe_num_of_nodes_fu_142">32, 0, 32, 0</column>
+<column name="pes_per_node_addr_reg_1137">8, 0, 8, 0</column>
+<column name="reuse_addr_reg_fu_110">64, 0, 64, 0</column>
+<column name="reuse_reg_fu_114">8, 0, 8, 0</column>
+<column name="trunc_ln168_reg_1148">1, 0, 1, 0</column>
+<column name="icmp_ln145_reg_1056">64, 32, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, load_graph_Pipeline_VITIS_LOOP_145_5, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, load_graph_Pipeline_VITIS_LOOP_145_5, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, load_graph_Pipeline_VITIS_LOOP_145_5, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, load_graph_Pipeline_VITIS_LOOP_145_5, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, load_graph_Pipeline_VITIS_LOOP_145_5, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, load_graph_Pipeline_VITIS_LOOP_145_5, return value</column>
+<column name="num_of_nodes">in, 31, ap_none, num_of_nodes, scalar</column>
+<column name="neighbor_tables_offsets_3_address0">out, 9, ap_memory, neighbor_tables_offsets_3, array</column>
+<column name="neighbor_tables_offsets_3_ce0">out, 1, ap_memory, neighbor_tables_offsets_3, array</column>
+<column name="neighbor_tables_offsets_3_we0">out, 1, ap_memory, neighbor_tables_offsets_3, array</column>
+<column name="neighbor_tables_offsets_3_d0">out, 32, ap_memory, neighbor_tables_offsets_3, array</column>
+<column name="neighbor_tables_offsets_2_address0">out, 9, ap_memory, neighbor_tables_offsets_2, array</column>
+<column name="neighbor_tables_offsets_2_ce0">out, 1, ap_memory, neighbor_tables_offsets_2, array</column>
+<column name="neighbor_tables_offsets_2_we0">out, 1, ap_memory, neighbor_tables_offsets_2, array</column>
+<column name="neighbor_tables_offsets_2_d0">out, 32, ap_memory, neighbor_tables_offsets_2, array</column>
+<column name="neighbor_tables_offsets_1_address0">out, 9, ap_memory, neighbor_tables_offsets_1, array</column>
+<column name="neighbor_tables_offsets_1_ce0">out, 1, ap_memory, neighbor_tables_offsets_1, array</column>
+<column name="neighbor_tables_offsets_1_we0">out, 1, ap_memory, neighbor_tables_offsets_1, array</column>
+<column name="neighbor_tables_offsets_1_d0">out, 32, ap_memory, neighbor_tables_offsets_1, array</column>
+<column name="neighbor_table_offsets_address0">out, 9, ap_memory, neighbor_table_offsets, array</column>
+<column name="neighbor_table_offsets_ce0">out, 1, ap_memory, neighbor_table_offsets, array</column>
+<column name="neighbor_table_offsets_we0">out, 1, ap_memory, neighbor_table_offsets, array</column>
+<column name="neighbor_table_offsets_d0">out, 32, ap_memory, neighbor_table_offsets, array</column>
+<column name="full_pe_degree_tables_address0">out, 9, ap_memory, full_pe_degree_tables, array</column>
+<column name="full_pe_degree_tables_ce0">out, 1, ap_memory, full_pe_degree_tables, array</column>
+<column name="full_pe_degree_tables_q0">in, 128, ap_memory, full_pe_degree_tables, array</column>
+<column name="neighbor_tables_offsets_0_address0">out, 9, ap_memory, neighbor_tables_offsets_0, array</column>
+<column name="neighbor_tables_offsets_0_ce0">out, 1, ap_memory, neighbor_tables_offsets_0, array</column>
+<column name="neighbor_tables_offsets_0_we0">out, 1, ap_memory, neighbor_tables_offsets_0, array</column>
+<column name="neighbor_tables_offsets_0_d0">out, 32, ap_memory, neighbor_tables_offsets_0, array</column>
+<column name="p_out">out, 32, ap_vld, p_out, pointer</column>
+<column name="p_out_ap_vld">out, 1, ap_vld, p_out, pointer</column>
+<column name="p_out1">out, 32, ap_vld, p_out1, pointer</column>
+<column name="p_out1_ap_vld">out, 1, ap_vld, p_out1, pointer</column>
+<column name="p_out2">out, 32, ap_vld, p_out2, pointer</column>
+<column name="p_out2_ap_vld">out, 1, ap_vld, p_out2, pointer</column>
+<column name="p_out3">out, 32, ap_vld, p_out3, pointer</column>
+<column name="p_out3_ap_vld">out, 1, ap_vld, p_out3, pointer</column>
+<column name="pes_per_node_address0">out, 8, ap_memory, pes_per_node, array</column>
+<column name="pes_per_node_ce0">out, 1, ap_memory, pes_per_node, array</column>
+<column name="pes_per_node_we0">out, 1, ap_memory, pes_per_node, array</column>
+<column name="pes_per_node_d0">out, 8, ap_memory, pes_per_node, array</column>
+<column name="pes_per_node_address1">out, 8, ap_memory, pes_per_node, array</column>
+<column name="pes_per_node_ce1">out, 1, ap_memory, pes_per_node, array</column>
+<column name="pes_per_node_q1">in, 8, ap_memory, pes_per_node, array</column>
+<column name="degree_table_1_address0">out, 9, ap_memory, degree_table_1, array</column>
+<column name="degree_table_1_ce0">out, 1, ap_memory, degree_table_1, array</column>
+<column name="degree_table_1_q0">in, 32, ap_memory, degree_table_1, array</column>
+<column name="degree_tables_1_0_address0">out, 9, ap_memory, degree_tables_1_0, array</column>
+<column name="degree_tables_1_0_ce0">out, 1, ap_memory, degree_tables_1_0, array</column>
+<column name="degree_tables_1_0_we0">out, 1, ap_memory, degree_tables_1_0, array</column>
+<column name="degree_tables_1_0_d0">out, 64, ap_memory, degree_tables_1_0, array</column>
+<column name="degree_tables_1_1_address0">out, 9, ap_memory, degree_tables_1_1, array</column>
+<column name="degree_tables_1_1_ce0">out, 1, ap_memory, degree_tables_1_1, array</column>
+<column name="degree_tables_1_1_we0">out, 1, ap_memory, degree_tables_1_1, array</column>
+<column name="degree_tables_1_1_d0">out, 64, ap_memory, degree_tables_1_1, array</column>
+<column name="degree_tables_1_2_address0">out, 9, ap_memory, degree_tables_1_2, array</column>
+<column name="degree_tables_1_2_ce0">out, 1, ap_memory, degree_tables_1_2, array</column>
+<column name="degree_tables_1_2_we0">out, 1, ap_memory, degree_tables_1_2, array</column>
+<column name="degree_tables_1_2_d0">out, 64, ap_memory, degree_tables_1_2, array</column>
+<column name="degree_tables_1_3_address0">out, 9, ap_memory, degree_tables_1_3, array</column>
+<column name="degree_tables_1_3_ce0">out, 1, ap_memory, degree_tables_1_3, array</column>
+<column name="degree_tables_1_3_we0">out, 1, ap_memory, degree_tables_1_3, array</column>
+<column name="degree_tables_1_3_d0">out, 64, ap_memory, degree_tables_1_3, array</column>
+</table>
+</item>
+</section>
+</profile>

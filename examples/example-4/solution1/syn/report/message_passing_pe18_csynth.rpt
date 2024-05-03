@@ -1,0 +1,351 @@
+
+
+================================================================
+== Vitis HLS Report for 'message_passing_pe18'
+================================================================
+* Date:           Fri May  3 00:29:11 2024
+
+* Version:        2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)
+* Project:        example-4
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.407 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max   | min | max |   Type  |
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |        5|      532|  16.665 ns|  1.773 us|    5|  532|       no|
+    +---------+---------+-----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                                          |                                                               |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                                 Instance                                 |                             Module                            |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_message_passing_pe18_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160  |message_passing_pe18_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2  |        2|      529|  6.666 ns|  1.763 us|    2|  529|       no|
+        +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+--------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++---------------------+---------+------+---------+--------+-----+
+|DSP                  |        -|     -|        -|       -|    -|
+|Expression           |        -|     -|        0|       2|    -|
+|FIFO                 |        -|     -|        -|       -|    -|
+|Instance             |        0|     5|     2918|    2693|    0|
+|Memory               |        -|     -|        -|       -|    -|
+|Multiplexer          |        -|     -|        -|     188|    -|
+|Register             |        -|     -|       49|       -|    -|
++---------------------+---------+------+---------+--------+-----+
+|Total                |        0|     5|     2967|    2883|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available SLR        |     1344|  2976|   871680|  435840|  320|
++---------------------+---------+------+---------+--------+-----+
+|Utilization SLR (%)  |        0|    ~0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available            |     2688|  5952|  1743360|  871680|  640|
++---------------------+---------+------+---------+--------+-----+
+|Utilization (%)      |        0|    ~0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+    |                                 Instance                                 |                             Module                            | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+    |grp_message_passing_pe18_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160  |message_passing_pe18_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2  |        0|   4|  2753|  2627|    0|
+    |mul_32ns_5ns_36_2_1_U6272                                                 |mul_32ns_5ns_36_2_1                                            |        0|   1|   165|    49|    0|
+    |mul_3ns_5ns_7_1_1_U6273                                                   |mul_3ns_5ns_7_1_1                                              |        0|   0|     0|    17|    0|
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                                     |                                                               |        0|   5|  2918|  2693|    0|
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                              |  26|          5|    1|          5|
+    |ap_done                                |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0110_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0111_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0112_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0113_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0114_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0115_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_018_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_019_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_01_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_02_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_04_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_05_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_06_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_07_read    |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0_read     |   9|          2|    1|          2|
+    |layer_num_blk_n                        |   9|          2|    1|          2|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  | 188|         41|   19|         41|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                          Name                                         | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                              |   4|   0|    4|          0|
+    |ap_done_reg                                                                            |   1|   0|    1|          0|
+    |bound_reg_270                                                                          |  36|   0|   36|          0|
+    |grp_message_passing_pe18_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160_ap_start_reg  |   1|   0|    1|          0|
+    |mul_ln712_reg_265                                                                      |   7|   0|    7|          0|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                  |  49|   0|   49|          0|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------------+-----+-----+------------+----------------------------------+--------------+
+|                 RTL Ports                | Dir | Bits|  Protocol  |           Source Object          |    C Type    |
++------------------------------------------+-----+-----+------------+----------------------------------+--------------+
+|ap_clk                                    |   in|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|ap_rst                                    |   in|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|ap_start                                  |   in|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|ap_done                                   |  out|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|ap_continue                               |   in|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|ap_idle                                   |  out|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|ap_ready                                  |  out|    1|  ap_ctrl_hs|              message_passing_pe18|  return value|
+|layer_num_dout                            |   in|    3|     ap_fifo|                         layer_num|       pointer|
+|layer_num_empty_n                         |   in|    1|     ap_fifo|                         layer_num|       pointer|
+|layer_num_read                            |  out|    1|     ap_fifo|                         layer_num|       pointer|
+|embeddings_per_node_0_0_0_0_0_dout        |   in|   16|     ap_fifo|     embeddings_per_node_0_0_0_0_0|       pointer|
+|embeddings_per_node_0_0_0_0_0_empty_n     |   in|    1|     ap_fifo|     embeddings_per_node_0_0_0_0_0|       pointer|
+|embeddings_per_node_0_0_0_0_0_read        |  out|    1|     ap_fifo|     embeddings_per_node_0_0_0_0_0|       pointer|
+|embeddings_per_node_0_0_0_0_01_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_01|       pointer|
+|embeddings_per_node_0_0_0_0_01_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_01|       pointer|
+|embeddings_per_node_0_0_0_0_01_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_01|       pointer|
+|embeddings_per_node_0_0_0_0_02_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_02|       pointer|
+|embeddings_per_node_0_0_0_0_02_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_02|       pointer|
+|embeddings_per_node_0_0_0_0_02_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_02|       pointer|
+|embeddings_per_node_0_0_0_0_03_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_03|       pointer|
+|embeddings_per_node_0_0_0_0_03_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_03|       pointer|
+|embeddings_per_node_0_0_0_0_03_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_03|       pointer|
+|embeddings_per_node_0_0_0_0_04_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_04|       pointer|
+|embeddings_per_node_0_0_0_0_04_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_04|       pointer|
+|embeddings_per_node_0_0_0_0_04_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_04|       pointer|
+|embeddings_per_node_0_0_0_0_05_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_05|       pointer|
+|embeddings_per_node_0_0_0_0_05_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_05|       pointer|
+|embeddings_per_node_0_0_0_0_05_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_05|       pointer|
+|embeddings_per_node_0_0_0_0_06_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_06|       pointer|
+|embeddings_per_node_0_0_0_0_06_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_06|       pointer|
+|embeddings_per_node_0_0_0_0_06_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_06|       pointer|
+|embeddings_per_node_0_0_0_0_07_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_07|       pointer|
+|embeddings_per_node_0_0_0_0_07_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_07|       pointer|
+|embeddings_per_node_0_0_0_0_07_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_07|       pointer|
+|embeddings_per_node_0_0_0_0_018_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_018|       pointer|
+|embeddings_per_node_0_0_0_0_018_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_018|       pointer|
+|embeddings_per_node_0_0_0_0_018_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_018|       pointer|
+|embeddings_per_node_0_0_0_0_019_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_019|       pointer|
+|embeddings_per_node_0_0_0_0_019_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_019|       pointer|
+|embeddings_per_node_0_0_0_0_019_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_019|       pointer|
+|embeddings_per_node_0_0_0_0_0110_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_0110|       pointer|
+|embeddings_per_node_0_0_0_0_0110_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0110|       pointer|
+|embeddings_per_node_0_0_0_0_0110_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0110|       pointer|
+|embeddings_per_node_0_0_0_0_0111_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_0111|       pointer|
+|embeddings_per_node_0_0_0_0_0111_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0111|       pointer|
+|embeddings_per_node_0_0_0_0_0111_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0111|       pointer|
+|embeddings_per_node_0_0_0_0_0112_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_0112|       pointer|
+|embeddings_per_node_0_0_0_0_0112_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0112|       pointer|
+|embeddings_per_node_0_0_0_0_0112_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0112|       pointer|
+|embeddings_per_node_0_0_0_0_0113_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_0113|       pointer|
+|embeddings_per_node_0_0_0_0_0113_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0113|       pointer|
+|embeddings_per_node_0_0_0_0_0113_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0113|       pointer|
+|embeddings_per_node_0_0_0_0_0114_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_0114|       pointer|
+|embeddings_per_node_0_0_0_0_0114_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0114|       pointer|
+|embeddings_per_node_0_0_0_0_0114_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0114|       pointer|
+|embeddings_per_node_0_0_0_0_0115_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_0115|       pointer|
+|embeddings_per_node_0_0_0_0_0115_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0115|       pointer|
+|embeddings_per_node_0_0_0_0_0115_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_0115|       pointer|
+|message_address0                          |  out|   11|   ap_memory|                           message|         array|
+|message_ce0                               |  out|    1|   ap_memory|                           message|         array|
+|message_we0                               |  out|    1|   ap_memory|                           message|         array|
+|message_d0                                |  out|   16|   ap_memory|                           message|         array|
+|message_address1                          |  out|   11|   ap_memory|                           message|         array|
+|message_ce1                               |  out|    1|   ap_memory|                           message|         array|
+|message_q1                                |   in|   16|   ap_memory|                           message|         array|
+|message6_address0                         |  out|   11|   ap_memory|                          message6|         array|
+|message6_ce0                              |  out|    1|   ap_memory|                          message6|         array|
+|message6_we0                              |  out|    1|   ap_memory|                          message6|         array|
+|message6_d0                               |  out|   16|   ap_memory|                          message6|         array|
+|message6_address1                         |  out|   11|   ap_memory|                          message6|         array|
+|message6_ce1                              |  out|    1|   ap_memory|                          message6|         array|
+|message6_q1                               |   in|   16|   ap_memory|                          message6|         array|
+|message7_address0                         |  out|   11|   ap_memory|                          message7|         array|
+|message7_ce0                              |  out|    1|   ap_memory|                          message7|         array|
+|message7_we0                              |  out|    1|   ap_memory|                          message7|         array|
+|message7_d0                               |  out|   16|   ap_memory|                          message7|         array|
+|message7_address1                         |  out|   11|   ap_memory|                          message7|         array|
+|message7_ce1                              |  out|    1|   ap_memory|                          message7|         array|
+|message7_q1                               |   in|   16|   ap_memory|                          message7|         array|
+|message8_address0                         |  out|   11|   ap_memory|                          message8|         array|
+|message8_ce0                              |  out|    1|   ap_memory|                          message8|         array|
+|message8_we0                              |  out|    1|   ap_memory|                          message8|         array|
+|message8_d0                               |  out|   16|   ap_memory|                          message8|         array|
+|message8_address1                         |  out|   11|   ap_memory|                          message8|         array|
+|message8_ce1                              |  out|    1|   ap_memory|                          message8|         array|
+|message8_q1                               |   in|   16|   ap_memory|                          message8|         array|
+|message9_address0                         |  out|   11|   ap_memory|                          message9|         array|
+|message9_ce0                              |  out|    1|   ap_memory|                          message9|         array|
+|message9_we0                              |  out|    1|   ap_memory|                          message9|         array|
+|message9_d0                               |  out|   16|   ap_memory|                          message9|         array|
+|message9_address1                         |  out|   11|   ap_memory|                          message9|         array|
+|message9_ce1                              |  out|    1|   ap_memory|                          message9|         array|
+|message9_q1                               |   in|   16|   ap_memory|                          message9|         array|
+|message10_address0                        |  out|   11|   ap_memory|                         message10|         array|
+|message10_ce0                             |  out|    1|   ap_memory|                         message10|         array|
+|message10_we0                             |  out|    1|   ap_memory|                         message10|         array|
+|message10_d0                              |  out|   16|   ap_memory|                         message10|         array|
+|message10_address1                        |  out|   11|   ap_memory|                         message10|         array|
+|message10_ce1                             |  out|    1|   ap_memory|                         message10|         array|
+|message10_q1                              |   in|   16|   ap_memory|                         message10|         array|
+|message11_address0                        |  out|   11|   ap_memory|                         message11|         array|
+|message11_ce0                             |  out|    1|   ap_memory|                         message11|         array|
+|message11_we0                             |  out|    1|   ap_memory|                         message11|         array|
+|message11_d0                              |  out|   16|   ap_memory|                         message11|         array|
+|message11_address1                        |  out|   11|   ap_memory|                         message11|         array|
+|message11_ce1                             |  out|    1|   ap_memory|                         message11|         array|
+|message11_q1                              |   in|   16|   ap_memory|                         message11|         array|
+|message12_address0                        |  out|   11|   ap_memory|                         message12|         array|
+|message12_ce0                             |  out|    1|   ap_memory|                         message12|         array|
+|message12_we0                             |  out|    1|   ap_memory|                         message12|         array|
+|message12_d0                              |  out|   16|   ap_memory|                         message12|         array|
+|message12_address1                        |  out|   11|   ap_memory|                         message12|         array|
+|message12_ce1                             |  out|    1|   ap_memory|                         message12|         array|
+|message12_q1                              |   in|   16|   ap_memory|                         message12|         array|
+|num_of_edges_per_pe_1_0                   |   in|   32|     ap_none|           num_of_edges_per_pe_1_0|       pointer|
+|edge_embedding_weights_V_0_0_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_0_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_0|         array|
+|edge_embedding_weights_V_0_1_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_1_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_1|         array|
+|edge_embedding_weights_V_0_2_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_2_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_2|         array|
+|edge_embedding_weights_V_0_3_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|edge_embedding_weights_V_0_3_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_3|         array|
+|neighbor_tables_1_0_address0              |  out|    9|   ap_memory|               neighbor_tables_1_0|         array|
+|neighbor_tables_1_0_ce0                   |  out|    1|   ap_memory|               neighbor_tables_1_0|         array|
+|neighbor_tables_1_0_q0                    |   in|    7|   ap_memory|               neighbor_tables_1_0|         array|
+|edge_attrs_1_0_address0                   |  out|    9|   ap_memory|                    edge_attrs_1_0|         array|
+|edge_attrs_1_0_ce0                        |  out|    1|   ap_memory|                    edge_attrs_1_0|         array|
+|edge_attrs_1_0_q0                         |   in|   71|   ap_memory|                    edge_attrs_1_0|         array|
+|degree_tables_1_0_address0                |  out|    9|   ap_memory|                 degree_tables_1_0|         array|
+|degree_tables_1_0_ce0                     |  out|    1|   ap_memory|                 degree_tables_1_0|         array|
+|degree_tables_1_0_q0                      |   in|   64|   ap_memory|                 degree_tables_1_0|         array|
+|edge_embedding_weights_V_0_4_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_4_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_4|         array|
+|edge_embedding_weights_V_0_5_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_5_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_5|         array|
+|edge_embedding_weights_V_0_6_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_6_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_6|         array|
+|edge_embedding_weights_V_0_7_address0     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_ce0          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_q0           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_address1     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_ce1          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_q1           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_address2     |  out|   10|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_ce2          |  out|    1|   ap_memory|      edge_embedding_weights_V_0_7|         array|
+|edge_embedding_weights_V_0_7_q2           |   in|   16|   ap_memory|      edge_embedding_weights_V_0_7|         array|
++------------------------------------------+-----+-----+------------+----------------------------------+--------------+
+

@@ -1,0 +1,327 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'message_passing_pe20'" level="0">
+<item name = "Date">Fri May  3 00:29:23 2024
+</item>
+<item name = "Version">2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)</item>
+<item name = "Project">example-4</item>
+<item name = "Solution">solution1 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu50-fsvh2104-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33 ns, 2.407 ns, 0.90 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">5, 532, 16.665 ns, 1.773 us, 5, 532, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_message_passing_pe20_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160">message_passing_pe20_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2, 2, 529, 6.666 ns, 1.763 us, 2, 529, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">0, 5, 2918, 2693, 0</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 188, -</column>
+<column name="Register">-, -, 49, -, -</column>
+<specialColumn name="Available SLR">1344, 2976, 871680, 435840, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, ~0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">2688, 5952, 1743360, 871680, 640</specialColumn>
+<specialColumn name="Utilization (%)">0, ~0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_message_passing_pe20_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160">message_passing_pe20_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2, 0, 4, 2753, 2627, 0</column>
+<column name="mul_32ns_5ns_36_2_1_U6434">mul_32ns_5ns_36_2_1, 0, 1, 165, 49, 0</column>
+<column name="mul_3ns_5ns_7_1_1_U6435">mul_3ns_5ns_7_1_1, 0, 0, 0, 17, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">26, 5, 1, 5</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0230_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0231_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0232_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0233_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0234_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0235_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0236_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_0237_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02438_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02439_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02440_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02441_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02442_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02443_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_02444_read">9, 2, 1, 2</column>
+<column name="embeddings_per_node_0_0_0_0_024_read">9, 2, 1, 2</column>
+<column name="layer_num_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="bound_reg_270">36, 0, 36, 0</column>
+<column name="grp_message_passing_pe20_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160_ap_start_reg">1, 0, 1, 0</column>
+<column name="mul_ln712_reg_265">7, 0, 7, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, message_passing_pe20, return value</column>
+<column name="layer_num_dout">in, 3, ap_fifo, layer_num, pointer</column>
+<column name="layer_num_empty_n">in, 1, ap_fifo, layer_num, pointer</column>
+<column name="layer_num_read">out, 1, ap_fifo, layer_num, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0230_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0230, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0230_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0230, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0230_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0230, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0231_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0231, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0231_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0231, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0231_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0231, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0232_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0232, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0232_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0232, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0232_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0232, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0233_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0233, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0233_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0233, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0233_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0233, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0234_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0234, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0234_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0234, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0234_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0234, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0235_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0235, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0235_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0235, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0235_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0235, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0236_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0236, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0236_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0236, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0236_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0236, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0237_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_0237, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0237_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_0237, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_0237_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_0237, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_024_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_024, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_024_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_024, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_024_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_024, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02438_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02438, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02438_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02438, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02438_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02438, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02439_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02439, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02439_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02439, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02439_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02439, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02440_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02440, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02440_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02440, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02440_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02440, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02441_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02441, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02441_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02441, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02441_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02441, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02442_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02442, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02442_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02442, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02442_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02442, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02443_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02443, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02443_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02443, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02443_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02443, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02444_dout">in, 16, ap_fifo, embeddings_per_node_0_0_0_0_02444, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02444_empty_n">in, 1, ap_fifo, embeddings_per_node_0_0_0_0_02444, pointer</column>
+<column name="embeddings_per_node_0_0_0_0_02444_read">out, 1, ap_fifo, embeddings_per_node_0_0_0_0_02444, pointer</column>
+<column name="message5_address0">out, 11, ap_memory, message5, array</column>
+<column name="message5_ce0">out, 1, ap_memory, message5, array</column>
+<column name="message5_we0">out, 1, ap_memory, message5, array</column>
+<column name="message5_d0">out, 16, ap_memory, message5, array</column>
+<column name="message5_address1">out, 11, ap_memory, message5, array</column>
+<column name="message5_ce1">out, 1, ap_memory, message5, array</column>
+<column name="message5_q1">in, 16, ap_memory, message5, array</column>
+<column name="message520_address0">out, 11, ap_memory, message520, array</column>
+<column name="message520_ce0">out, 1, ap_memory, message520, array</column>
+<column name="message520_we0">out, 1, ap_memory, message520, array</column>
+<column name="message520_d0">out, 16, ap_memory, message520, array</column>
+<column name="message520_address1">out, 11, ap_memory, message520, array</column>
+<column name="message520_ce1">out, 1, ap_memory, message520, array</column>
+<column name="message520_q1">in, 16, ap_memory, message520, array</column>
+<column name="message521_address0">out, 11, ap_memory, message521, array</column>
+<column name="message521_ce0">out, 1, ap_memory, message521, array</column>
+<column name="message521_we0">out, 1, ap_memory, message521, array</column>
+<column name="message521_d0">out, 16, ap_memory, message521, array</column>
+<column name="message521_address1">out, 11, ap_memory, message521, array</column>
+<column name="message521_ce1">out, 1, ap_memory, message521, array</column>
+<column name="message521_q1">in, 16, ap_memory, message521, array</column>
+<column name="message522_address0">out, 11, ap_memory, message522, array</column>
+<column name="message522_ce0">out, 1, ap_memory, message522, array</column>
+<column name="message522_we0">out, 1, ap_memory, message522, array</column>
+<column name="message522_d0">out, 16, ap_memory, message522, array</column>
+<column name="message522_address1">out, 11, ap_memory, message522, array</column>
+<column name="message522_ce1">out, 1, ap_memory, message522, array</column>
+<column name="message522_q1">in, 16, ap_memory, message522, array</column>
+<column name="message523_address0">out, 11, ap_memory, message523, array</column>
+<column name="message523_ce0">out, 1, ap_memory, message523, array</column>
+<column name="message523_we0">out, 1, ap_memory, message523, array</column>
+<column name="message523_d0">out, 16, ap_memory, message523, array</column>
+<column name="message523_address1">out, 11, ap_memory, message523, array</column>
+<column name="message523_ce1">out, 1, ap_memory, message523, array</column>
+<column name="message523_q1">in, 16, ap_memory, message523, array</column>
+<column name="message524_address0">out, 11, ap_memory, message524, array</column>
+<column name="message524_ce0">out, 1, ap_memory, message524, array</column>
+<column name="message524_we0">out, 1, ap_memory, message524, array</column>
+<column name="message524_d0">out, 16, ap_memory, message524, array</column>
+<column name="message524_address1">out, 11, ap_memory, message524, array</column>
+<column name="message524_ce1">out, 1, ap_memory, message524, array</column>
+<column name="message524_q1">in, 16, ap_memory, message524, array</column>
+<column name="message525_address0">out, 11, ap_memory, message525, array</column>
+<column name="message525_ce0">out, 1, ap_memory, message525, array</column>
+<column name="message525_we0">out, 1, ap_memory, message525, array</column>
+<column name="message525_d0">out, 16, ap_memory, message525, array</column>
+<column name="message525_address1">out, 11, ap_memory, message525, array</column>
+<column name="message525_ce1">out, 1, ap_memory, message525, array</column>
+<column name="message525_q1">in, 16, ap_memory, message525, array</column>
+<column name="message526_address0">out, 11, ap_memory, message526, array</column>
+<column name="message526_ce0">out, 1, ap_memory, message526, array</column>
+<column name="message526_we0">out, 1, ap_memory, message526, array</column>
+<column name="message526_d0">out, 16, ap_memory, message526, array</column>
+<column name="message526_address1">out, 11, ap_memory, message526, array</column>
+<column name="message526_ce1">out, 1, ap_memory, message526, array</column>
+<column name="message526_q1">in, 16, ap_memory, message526, array</column>
+<column name="num_of_edges_per_pe_1_2">in, 32, ap_none, num_of_edges_per_pe_1_2, pointer</column>
+<column name="edge_embedding_weights_V_2_0_address0">out, 10, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_q0">in, 16, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_address1">out, 10, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_q1">in, 16, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_address2">out, 10, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_0_q2">in, 16, ap_memory, edge_embedding_weights_V_2_0, array</column>
+<column name="edge_embedding_weights_V_2_1_address0">out, 10, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_q0">in, 16, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_address1">out, 10, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_q1">in, 16, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_address2">out, 10, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_1_q2">in, 16, ap_memory, edge_embedding_weights_V_2_1, array</column>
+<column name="edge_embedding_weights_V_2_2_address0">out, 10, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_q0">in, 16, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_address1">out, 10, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_q1">in, 16, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_address2">out, 10, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_2_q2">in, 16, ap_memory, edge_embedding_weights_V_2_2, array</column>
+<column name="edge_embedding_weights_V_2_3_address0">out, 10, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_q0">in, 16, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_address1">out, 10, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_q1">in, 16, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_address2">out, 10, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="edge_embedding_weights_V_2_3_q2">in, 16, ap_memory, edge_embedding_weights_V_2_3, array</column>
+<column name="neighbor_tables_1_2_address0">out, 9, ap_memory, neighbor_tables_1_2, array</column>
+<column name="neighbor_tables_1_2_ce0">out, 1, ap_memory, neighbor_tables_1_2, array</column>
+<column name="neighbor_tables_1_2_q0">in, 7, ap_memory, neighbor_tables_1_2, array</column>
+<column name="edge_attrs_1_2_address0">out, 9, ap_memory, edge_attrs_1_2, array</column>
+<column name="edge_attrs_1_2_ce0">out, 1, ap_memory, edge_attrs_1_2, array</column>
+<column name="edge_attrs_1_2_q0">in, 71, ap_memory, edge_attrs_1_2, array</column>
+<column name="degree_tables_1_2_address0">out, 9, ap_memory, degree_tables_1_2, array</column>
+<column name="degree_tables_1_2_ce0">out, 1, ap_memory, degree_tables_1_2, array</column>
+<column name="degree_tables_1_2_q0">in, 64, ap_memory, degree_tables_1_2, array</column>
+<column name="edge_embedding_weights_V_2_4_address0">out, 10, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_q0">in, 16, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_address1">out, 10, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_q1">in, 16, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_address2">out, 10, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_4_q2">in, 16, ap_memory, edge_embedding_weights_V_2_4, array</column>
+<column name="edge_embedding_weights_V_2_5_address0">out, 10, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_q0">in, 16, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_address1">out, 10, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_q1">in, 16, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_address2">out, 10, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_5_q2">in, 16, ap_memory, edge_embedding_weights_V_2_5, array</column>
+<column name="edge_embedding_weights_V_2_6_address0">out, 10, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_q0">in, 16, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_address1">out, 10, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_q1">in, 16, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_address2">out, 10, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_6_q2">in, 16, ap_memory, edge_embedding_weights_V_2_6, array</column>
+<column name="edge_embedding_weights_V_2_7_address0">out, 10, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_ce0">out, 1, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_q0">in, 16, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_address1">out, 10, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_ce1">out, 1, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_q1">in, 16, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_address2">out, 10, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_ce2">out, 1, ap_memory, edge_embedding_weights_V_2_7, array</column>
+<column name="edge_embedding_weights_V_2_7_q2">in, 16, ap_memory, edge_embedding_weights_V_2_7, array</column>
+</table>
+</item>
+</section>
+</profile>

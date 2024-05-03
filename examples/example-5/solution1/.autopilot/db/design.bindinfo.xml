@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln13_fu_69_p2" SOURCE="example-5/kernel.cpp:13" VARIABLE="icmp_ln13" MODULE="producer" LOOP="VITIS_LOOP_13_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_75_p2" SOURCE="example-5/kernel.cpp:13" VARIABLE="i_2" MODULE="producer" LOOP="VITIS_LOOP_13_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln16_fu_85_p2" SOURCE="example-5/kernel.cpp:16" VARIABLE="icmp_ln16" MODULE="producer" LOOP="VITIS_LOOP_13_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln26_fu_65_p2" SOURCE="example-5/kernel.cpp:26" VARIABLE="icmp_ln26" MODULE="consumer" LOOP="VITIS_LOOP_26_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="i_4_fu_71_p2" SOURCE="example-5/kernel.cpp:26" VARIABLE="i_4" MODULE="consumer" LOOP="VITIS_LOOP_26_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln29_fu_81_p2" SOURCE="example-5/kernel.cpp:29" VARIABLE="icmp_ln29" MODULE="consumer" LOOP="VITIS_LOOP_26_1" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="storage" DISPLAY="bind_storage fifo" ID="" IMPL="srl" LATENCY="0" OPTYPE="fifo" PRAGMA="" RTLNAME="channel_U" SOURCE="example-5/kernel.cpp:42" VARIABLE="channel" MODULE="kernel" LOOP="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

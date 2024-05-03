@@ -1,0 +1,221 @@
+
+
+================================================================
+== Synthesis Summary Report of 'GIN_compute_graphs'
+================================================================
++ General Information: 
+    * Date:           Fri May  3 00:33:39 2024
+    * Version:        2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)
+    * Project:        example-4
+    * Solution:       solution1 (Vitis Kernel Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcu50-fsvh2104-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+--------+----------+------------+------------+--------------+--------------+-----+
+    |                                                      Modules                                                     |  Issue |       | Latency |  Latency  | Iteration|         |  Trip  |          |            |            |              |              |     |
+    |                                                      & Loops                                                     |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval|  Count | Pipelined|    BRAM    |     DSP    |      FF      |      LUT     | URAM|
+    +------------------------------------------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+--------+----------+------------+------------+--------------+--------------+-----+
+    |+ GIN_compute_graphs                                                                                              |  Timing|  -0.83|   216001|  7.199e+05|         -|   216002|       -|        no|  1158 (43%)|  1752 (29%)|  329762 (18%)|  330609 (37%)|    -|
+    | + grp_load_weights_fu_2778                                                                                       |       -|   0.00|   208640|  6.954e+05|         -|   208640|       -|        no|           -|    10 (~0%)|    35802 (2%)|    19616 (2%)|    -|
+    |  + grp_load_weights_Pipeline_load_mlp_1_bias_load_mlp_1_bias_dim_fu_2394                                         |       -|   0.00|     1077|  3.590e+03|         -|     1077|       -|        no|           -|     1 (~0%)|   11503 (~0%)|    2768 (~0%)|    -|
+    |   o load_mlp_1_bias_load_mlp_1_bias_dim                                                                          |       -|   2.43|     1075|  3.583e+03|        77|        1|    1000|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_weights_Pipeline_load_mlp_2_bias_load_mlp_2_bias_dim_fu_2803                                         |       -|   0.00|      577|  1.923e+03|         -|      577|       -|        no|           -|     2 (~0%)|    1502 (~0%)|    2517 (~0%)|    -|
+    |   o load_mlp_2_bias_load_mlp_2_bias_dim                                                                          |       -|   2.43|      575|  1.916e+03|        77|        1|     500|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_weights_Pipeline_load_mlp_1_weights_load_mlp_1_weights_dim_out_load_mlp_1_weights_dim_in_fu_2816     |       -|   0.00|   100077|  3.336e+05|         -|   100077|       -|        no|           -|     2 (~0%)|    6792 (~0%)|    2964 (~0%)|    -|
+    |   o load_mlp_1_weights_load_mlp_1_weights_dim_out_load_mlp_1_weights_dim_in                                      |       -|   2.43|   100075|  3.335e+05|        77|        1|  100000|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_weights_Pipeline_load_mlp_2_weights_load_mlp_2_weights_dim_out_load_mlp_2_weights_dim_in_fu_3625     |       -|   0.00|   100077|  3.336e+05|         -|   100077|       -|        no|           -|     2 (~0%)|   11774 (~0%)|    3058 (~0%)|    -|
+    |   o load_mlp_2_weights_load_mlp_2_weights_dim_out_load_mlp_2_weights_dim_in                                      |       -|   2.43|   100075|  3.335e+05|        77|        1|  100000|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_weights_Pipeline_load_edge_emb_weights_load_edge_emb_weights_feat_load_edge_emb_weights_dim_fu_4434  |       -|   0.00|     6577|  2.192e+04|         -|     6577|       -|        no|           -|     3 (~0%)|    1694 (~0%)|    2808 (~0%)|    -|
+    |   o load_edge_emb_weights_load_edge_emb_weights_feat_load_edge_emb_weights_dim                                   |       -|   2.43|     6575|  2.191e+04|        77|        1|    6500|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_weights_Pipeline_load_graph_pred_weights_dim_fu_4507                                                 |       -|   0.00|      173|    576.609|         -|      173|       -|        no|           -|           -|    1375 (~0%)|    2404 (~0%)|    -|
+    |   o load_graph_pred_weights_dim                                                                                  |       -|   2.43|      171|    569.943|        73|        1|     100|       yes|           -|           -|             -|             -|    -|
+    | + grp_load_graph_fu_5061                                                                                         |  Timing|  -0.83|      479|  1.597e+03|         -|      479|       -|        no|    10 (~0%)|           -|    67088 (3%)|    13018 (1%)|    -|
+    |  + grp_load_graph_Pipeline_VITIS_LOOP_109_1_fu_188                                                               |       -|   0.37|       21|     69.993|         -|       21|       -|        no|           -|           -|      34 (~0%)|      95 (~0%)|    -|
+    |   o VITIS_LOOP_109_1                                                                                             |       -|   2.43|       19|     63.327|         1|        1|      19|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_graph_Pipeline_VITIS_LOOP_122_3_fu_198                                                               |  Timing|  -0.82|      194|    646.602|         -|      194|       -|        no|           -|           -|    26279 (1%)|    5916 (~0%)|    -|
+    |   o VITIS_LOOP_122_3                                                                                             |       -|   2.43|      192|    639.936|        76|        3|      40|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_graph_Pipeline_VITIS_LOOP_145_5_fu_212                                                               |       -|   0.14|       23|     76.659|         -|       23|       -|        no|           -|           -|     770 (~0%)|     891 (~0%)|    -|
+    |   o VITIS_LOOP_145_5                                                                                             |       -|   2.43|       21|     69.993|         4|        1|      19|       yes|           -|           -|             -|             -|    -|
+    |  + grp_load_graph_Pipeline_VITIS_LOOP_171_7_fu_239                                                               |       -|   0.00|      234|    779.922|         -|      234|       -|        no|           -|           -|    39819 (2%)|    5413 (~0%)|    -|
+    |   o VITIS_LOOP_171_7                                                                                             |       -|   2.43|      232|    773.256|        77|        4|      40|       yes|           -|           -|             -|             -|    -|
+    | + grp_compute_CONV_layer_fu_5107*                                                                                |  Timing|  -0.06|     1131|  3.770e+03|         -|     1132|       -|  dataflow|    100 (3%)|  1731 (29%)|  211674 (12%)|  234534 (26%)|    -|
+    |  + grp_check_node_embedding_fu_2572                                                                              |       -|   0.00|     1131|  3.770e+03|         -|     1131|       -|        no|     32 (1%)|  1610 (27%)|  176202 (10%)|  134763 (15%)|    -|
+    |   + grp_node_embedding_multi_pe_fu_2182                                                                          |       -|   0.03|      762|  2.540e+03|         -|      762|       -|        no|           -|  1601 (26%)|   107894 (6%)|    85599 (9%)|    -|
+    |    o VITIS_LOOP_43_1_VITIS_LOOP_50_2                                                                             |       -|   2.43|      758|  2.526e+03|       210|        1|     550|       yes|           -|           -|             -|             -|    -|
+    |   + grp_load_input_node_embeddings5_fu_4272                                                                      |       -|   0.00|     1129|  3.763e+03|         -|     1129|       -|        no|           -|     9 (~0%)|    68296 (3%)|    45933 (5%)|    -|
+    |    o VITIS_LOOP_201_1                                                                                            |       -|   2.43|     1127|  3.756e+03|       228|       50|      19|       yes|           -|           -|             -|             -|    -|
+    |  + call_ln0_entry_proc79_fu_4668                                                                                 |       -|   1.22|        0|      0.000|         -|        0|       -|        no|           -|           -|       2 (~0%)|      20 (~0%)|    -|
+    |  + grp_check_message_passing_fu_4675                                                                             |  Timing|  -0.06|      708|  2.360e+03|         -|      708|       -|        no|     64 (2%)|    121 (2%)|    35142 (2%)|   99402 (11%)|    -|
+    |   + grp_message_passing_all_pes_fu_436*                                                                          |  Timing|  -0.06|      578|  1.926e+03|         -|      533|       -|  dataflow|     64 (2%)|    20 (~0%)|    22893 (1%)|    19759 (2%)|    -|
+    |    + grp_ne_to_mp_adapter_fu_638                                                                                 |  Timing|  -0.06|      502|  1.673e+03|         -|      502|       -|        no|           -|           -|    6965 (~0%)|    4322 (~0%)|    -|
+    |     o VITIS_LOOP_142_1                                                                                           |       -|   2.43|      500|  1.666e+03|        50|       50|      10|       yes|           -|           -|             -|             -|    -|
+    |    + call_ln0_entry_proc_fu_718                                                                                  |       -|   1.22|        0|      0.000|         -|        0|       -|        no|           -|           -|       2 (~0%)|      47 (~0%)|    -|
+    |    + grp_message_passing_pe18_fu_728                                                                             |       -|   0.03|      532|  1.773e+03|         -|      532|       -|        no|           -|     5 (~0%)|    2967 (~0%)|    2883 (~0%)|    -|
+    |     + grp_message_passing_pe18_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160                                   |       -|   0.03|      529|  1.763e+03|         -|      529|       -|        no|           -|     4 (~0%)|    2753 (~0%)|    2627 (~0%)|    -|
+    |      o VITIS_LOOP_43_1_VITIS_LOOP_50_2                                                                           |       -|   2.43|      527|  1.756e+03|         9|        1|     520|       yes|           -|           -|             -|             -|    -|
+    |    + grp_message_passing_pe19_fu_789                                                                             |       -|   0.03|      532|  1.773e+03|         -|      532|       -|        no|           -|     5 (~0%)|    2967 (~0%)|    2883 (~0%)|    -|
+    |     + grp_message_passing_pe19_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160                                   |       -|   0.03|      529|  1.763e+03|         -|      529|       -|        no|           -|     4 (~0%)|    2753 (~0%)|    2627 (~0%)|    -|
+    |      o VITIS_LOOP_43_1_VITIS_LOOP_50_2                                                                           |       -|   2.43|      527|  1.756e+03|         9|        1|     520|       yes|           -|           -|             -|             -|    -|
+    |    + grp_message_passing_pe20_fu_850                                                                             |       -|   0.03|      532|  1.773e+03|         -|      532|       -|        no|           -|     5 (~0%)|    2967 (~0%)|    2883 (~0%)|    -|
+    |     + grp_message_passing_pe20_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160                                   |       -|   0.03|      529|  1.763e+03|         -|      529|       -|        no|           -|     4 (~0%)|    2753 (~0%)|    2627 (~0%)|    -|
+    |      o VITIS_LOOP_43_1_VITIS_LOOP_50_2                                                                           |       -|   2.43|      527|  1.756e+03|         9|        1|     520|       yes|           -|           -|             -|             -|    -|
+    |    + grp_message_passing_pe21_fu_911                                                                             |       -|   0.03|      532|  1.773e+03|         -|      532|       -|        no|           -|     5 (~0%)|    2967 (~0%)|    2883 (~0%)|    -|
+    |     + grp_message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160                                   |       -|   0.03|      529|  1.763e+03|         -|      529|       -|        no|           -|     4 (~0%)|    2753 (~0%)|    2627 (~0%)|    -|
+    |      o VITIS_LOOP_43_1_VITIS_LOOP_50_2                                                                           |       -|   2.43|      527|  1.756e+03|         9|        1|     520|       yes|           -|           -|             -|             -|    -|
+    |   + grp_finalize_fu_612*                                                                                         |       -|   0.00|      706|  2.353e+03|         -|      535|       -|  dataflow|           -|    101 (1%)|   12138 (~0%)|    79478 (9%)|    -|
+    |    + call_ln0_entry_proc78_fu_278                                                                                |       -|   1.22|        0|      0.000|         -|        0|       -|        no|           -|           -|       2 (~0%)|      20 (~0%)|    -|
+    |    + grp_global_mean_pooling_fu_285                                                                              |       -|   0.04|      534|  1.780e+03|         -|      534|       -|        no|           -|     1 (~0%)|    7039 (~0%)|    72215 (8%)|    -|
+    |     + grp_global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1_fu_472                           |       -|   0.04|      453|  1.510e+03|         -|      453|       -|        no|           -|           -|     127 (~0%)|     429 (~0%)|    -|
+    |      o global_mean_pooling_main_VITIS_LOOP_53_1                                                                  |       -|   2.43|      451|  1.503e+03|         3|        1|     450|       yes|           -|           -|             -|             -|    -|
+    |     + grp_global_mean_pooling_Pipeline_global_mean_pooling_tail_fu_487                                           |       -|   0.22|       74|    246.642|         -|       74|       -|        no|           -|           -|    6628 (~0%)|    71225 (8%)|    -|
+    |      o global_mean_pooling_tail                                                                                  |       -|   2.43|       72|    239.976|        24|        1|      50|       yes|           -|           -|             -|             -|    -|
+    |    + grp_linear_100_1_1_false_s_fu_299                                                                           |       -|   0.00|      171|    569.943|         -|      171|       -|        no|           -|    100 (1%)|    1389 (~0%)|    3556 (~0%)|    -|
+    | o VITIS_LOOP_44_1                                                                                                |       -|   2.43|   216000|  7.199e+05|    216000|        -|       1|        no|           -|           -|             -|             -|    -|
+    |  o VITIS_LOOP_72_2                                                                                               |       -|   2.43|     6798|  2.266e+04|      1133|        -|       6|        no|           -|           -|             -|             -|    -|
+    +------------------------------------------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+--------+----------+------------+------------+--------------+--------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|           | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_mem | 32 -> 1024 | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 8             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++--------------------------+-----------+--------------------------------------+
+| Argument                 | Direction | Datatype                             |
++--------------------------+-----------+--------------------------------------+
+| num_graphs               | in        | int                                  |
+| nums_of_nodes            | inout     | int*                                 |
+| nums_of_edges            | inout     | int*                                 |
+| reload_weights           | inout     | int*                                 |
+| out                      | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| node_feature_in          | inout     | array<int, 9>*                       |
+| edge_list_in             | inout     | pointer                              |
+| edge_attr_in             | inout     | array<int, 3>*                       |
+| node_embedding_weight_in | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| edge_embedding_weight_in | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| node_mlp_1_weights       | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| node_mlp_1_bias          | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| node_mlp_2_weights       | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| node_mlp_2_bias          | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| graph_pred_weights_in    | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| graph_pred_bias_in       | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
++--------------------------+-----------+--------------------------------------+
+
+* SW-to-HW Mapping
++--------------------------+------------------------------------------+-----------+----------+-----------------------+
+| Argument                 | HW Name                                  | HW Type   | HW Usage | HW Info               |
++--------------------------+------------------------------------------+-----------+----------+-----------------------+
+| num_graphs               | s_axi_control num_graphs                 | register  |          | offset=0x10, range=32 |
+| nums_of_nodes            | m_axi_mem                                | interface |          |                       |
+| nums_of_nodes            | s_axi_control nums_of_nodes_1            | register  | offset   | offset=0x18, range=32 |
+| nums_of_nodes            | s_axi_control nums_of_nodes_2            | register  | offset   | offset=0x1c, range=32 |
+| nums_of_edges            | m_axi_mem                                | interface |          |                       |
+| nums_of_edges            | s_axi_control nums_of_edges_1            | register  | offset   | offset=0x24, range=32 |
+| nums_of_edges            | s_axi_control nums_of_edges_2            | register  | offset   | offset=0x28, range=32 |
+| reload_weights           | m_axi_mem                                | interface |          |                       |
+| reload_weights           | s_axi_control reload_weights_1           | register  | offset   | offset=0x30, range=32 |
+| reload_weights           | s_axi_control reload_weights_2           | register  | offset   | offset=0x34, range=32 |
+| out                      | m_axi_mem                                | interface |          |                       |
+| out                      | s_axi_control out_r_1                    | register  | offset   | offset=0x3c, range=32 |
+| out                      | s_axi_control out_r_2                    | register  | offset   | offset=0x40, range=32 |
+| node_feature_in          | m_axi_mem                                | interface |          |                       |
+| node_feature_in          | s_axi_control node_feature_in_1          | register  | offset   | offset=0x48, range=32 |
+| node_feature_in          | s_axi_control node_feature_in_2          | register  | offset   | offset=0x4c, range=32 |
+| edge_list_in             | m_axi_mem                                | interface |          |                       |
+| edge_list_in             | s_axi_control edge_list_in_1             | register  | offset   | offset=0x54, range=32 |
+| edge_list_in             | s_axi_control edge_list_in_2             | register  | offset   | offset=0x58, range=32 |
+| edge_attr_in             | m_axi_mem                                | interface |          |                       |
+| edge_attr_in             | s_axi_control edge_attr_in_1             | register  | offset   | offset=0x60, range=32 |
+| edge_attr_in             | s_axi_control edge_attr_in_2             | register  | offset   | offset=0x64, range=32 |
+| node_embedding_weight_in | m_axi_mem                                | interface |          |                       |
+| node_embedding_weight_in | s_axi_control node_embedding_weight_in_1 | register  | offset   | offset=0x6c, range=32 |
+| node_embedding_weight_in | s_axi_control node_embedding_weight_in_2 | register  | offset   | offset=0x70, range=32 |
+| edge_embedding_weight_in | m_axi_mem                                | interface |          |                       |
+| edge_embedding_weight_in | s_axi_control edge_embedding_weight_in_1 | register  | offset   | offset=0x78, range=32 |
+| edge_embedding_weight_in | s_axi_control edge_embedding_weight_in_2 | register  | offset   | offset=0x7c, range=32 |
+| node_mlp_1_weights       | m_axi_mem                                | interface |          |                       |
+| node_mlp_1_weights       | s_axi_control node_mlp_1_weights_1       | register  | offset   | offset=0x84, range=32 |
+| node_mlp_1_weights       | s_axi_control node_mlp_1_weights_2       | register  | offset   | offset=0x88, range=32 |
+| node_mlp_1_bias          | m_axi_mem                                | interface |          |                       |
+| node_mlp_1_bias          | s_axi_control node_mlp_1_bias_1          | register  | offset   | offset=0x90, range=32 |
+| node_mlp_1_bias          | s_axi_control node_mlp_1_bias_2          | register  | offset   | offset=0x94, range=32 |
+| node_mlp_2_weights       | m_axi_mem                                | interface |          |                       |
+| node_mlp_2_weights       | s_axi_control node_mlp_2_weights_1       | register  | offset   | offset=0x9c, range=32 |
+| node_mlp_2_weights       | s_axi_control node_mlp_2_weights_2       | register  | offset   | offset=0xa0, range=32 |
+| node_mlp_2_bias          | m_axi_mem                                | interface |          |                       |
+| node_mlp_2_bias          | s_axi_control node_mlp_2_bias_1          | register  | offset   | offset=0xa8, range=32 |
+| node_mlp_2_bias          | s_axi_control node_mlp_2_bias_2          | register  | offset   | offset=0xac, range=32 |
+| graph_pred_weights_in    | m_axi_mem                                | interface |          |                       |
+| graph_pred_weights_in    | s_axi_control graph_pred_weights_in_1    | register  | offset   | offset=0xb4, range=32 |
+| graph_pred_weights_in    | s_axi_control graph_pred_weights_in_2    | register  | offset   | offset=0xb8, range=32 |
+| graph_pred_bias_in       | m_axi_mem                                | interface |          |                       |
+| graph_pred_bias_in       | s_axi_control graph_pred_bias_in_1       | register  | offset   | offset=0xc0, range=32 |
+| graph_pred_bias_in       | s_axi_control graph_pred_bias_in_2       | register  | offset   | offset=0xc4, range=32 |
++--------------------------+------------------------------------------+-----------+----------+-----------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+* Burst Summary
++--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------+
+| HW Interface | Message                                                                                                                                                                                                                         | Location                            |
++--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------+
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:127:16 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:176:16 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:185:33 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:207:42 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
+| m_axi_mem    | Multiple burst reads of variable length and bit width 1024. These bursts requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. | example-4/src/load_inputs.cc:212:25 |
++--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------+
+
+* Bursts and Widening Missed
++--------------+----------------+-----------------+------------------------------------------------+------------+------------------------------------+
+| HW Interface | Variable       | Loop            | Problem                                        | Resolution | Location                           |
++--------------+----------------+-----------------+------------------------------------------------+------------+------------------------------------+
+| m_axi_mem    | nums_of_nodes  | VITIS_LOOP_44_1 | Sequential access length is not divisible by 2 | 214-234    | example-4/src/GIN_compute.cc:44:19 |
+| m_axi_mem    | nums_of_edges  | VITIS_LOOP_44_1 | Sequential access length is not divisible by 2 | 214-234    | example-4/src/GIN_compute.cc:44:19 |
+| m_axi_mem    | reload_weights | VITIS_LOOP_44_1 | Sequential access length is not divisible by 2 | 214-234    | example-4/src/GIN_compute.cc:44:19 |
++--------------+----------------+-----------------+------------------------------------------------+------------+------------------------------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2021.1;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+

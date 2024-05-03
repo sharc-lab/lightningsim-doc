@@ -1,0 +1,7 @@
+kernel_flow_control_loop_pipe
+kernel_flow_control_loop_pipe
+kernel_fifo_w256_d2_S
+kernel_start_for_consumer_U0
+producer
+consumer
+kernel

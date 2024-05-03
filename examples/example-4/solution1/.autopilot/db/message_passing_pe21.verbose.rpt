@@ -1,0 +1,1609 @@
+
+
+================================================================
+== Vitis HLS Report for 'message_passing_pe21'
+================================================================
+* Date:           Fri May  3 00:29:29 2024
+
+* Version:        2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)
+* Project:        example-4
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.407 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max   | min | max |   Type  |
+    +---------+---------+-----------+----------+-----+-----+---------+
+    |        5|      532|  16.665 ns|  1.773 us|    5|  532|       no|
+    +---------+---------+-----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                                          |                                                               |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                                 Instance                                 |                             Module                            |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160  |message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2  |        2|      529|  6.666 ns|  1.763 us|    2|  529|       no|
+        +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+--------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++---------------------+---------+------+---------+--------+-----+
+|DSP                  |        -|     -|        -|       -|    -|
+|Expression           |        -|     -|        0|       2|    -|
+|FIFO                 |        -|     -|        -|       -|    -|
+|Instance             |        0|     5|     2918|    2693|    0|
+|Memory               |        -|     -|        -|       -|    -|
+|Multiplexer          |        -|     -|        -|     188|    -|
+|Register             |        -|     -|       49|       -|    -|
++---------------------+---------+------+---------+--------+-----+
+|Total                |        0|     5|     2967|    2883|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available SLR        |     1344|  2976|   871680|  435840|  320|
++---------------------+---------+------+---------+--------+-----+
+|Utilization SLR (%)  |        0|    ~0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available            |     2688|  5952|  1743360|  871680|  640|
++---------------------+---------+------+---------+--------+-----+
+|Utilization (%)      |        0|    ~0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+    |                                 Instance                                 |                             Module                            | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+    |grp_message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160  |message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2  |        0|   4|  2753|  2627|    0|
+    |mul_32ns_5ns_36_2_1_U6514                                                 |mul_32ns_5ns_36_2_1                                            |        0|   1|   165|    49|    0|
+    |mul_3ns_5ns_7_1_1_U6515                                                   |mul_3ns_5ns_7_1_1                                              |        0|   0|     0|    17|    0|
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                                     |                                                               |        0|   5|  2918|  2693|    0|
+    +--------------------------------------------------------------------------+---------------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------+----+-----------+-----+-----------+
+    |                  Name                  | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                               |  26|          5|    1|          5|
+    |ap_done                                 |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0345_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0346_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0347_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0348_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0349_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0350_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0351_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_0352_read   |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03553_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03554_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03555_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03556_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03557_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03558_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_03559_read  |   9|          2|    1|          2|
+    |embeddings_per_node_0_0_0_0_035_read    |   9|          2|    1|          2|
+    |layer_num_blk_n                         |   9|          2|    1|          2|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |Total                                   | 188|         41|   19|         41|
+    +----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                          Name                                         | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                              |   4|   0|    4|          0|
+    |ap_done_reg                                                                            |   1|   0|    1|          0|
+    |bound_reg_270                                                                          |  36|   0|   36|          0|
+    |grp_message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160_ap_start_reg  |   1|   0|    1|          0|
+    |mul_ln712_reg_265                                                                      |   7|   0|    7|          0|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                  |  49|   0|   49|          0|
+    +---------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|                 RTL Ports                 | Dir | Bits|  Protocol  |           Source Object           |    C Type    |
++-------------------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|ap_clk                                     |   in|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|ap_rst                                     |   in|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|ap_start                                   |   in|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|ap_done                                    |  out|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|ap_continue                                |   in|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|ap_idle                                    |  out|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|ap_ready                                   |  out|    1|  ap_ctrl_hs|               message_passing_pe21|  return value|
+|layer_num_dout                             |   in|    3|     ap_fifo|                          layer_num|       pointer|
+|layer_num_empty_n                          |   in|    1|     ap_fifo|                          layer_num|       pointer|
+|layer_num_read                             |  out|    1|     ap_fifo|                          layer_num|       pointer|
+|embeddings_per_node_0_0_0_0_0345_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0345|       pointer|
+|embeddings_per_node_0_0_0_0_0345_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0345|       pointer|
+|embeddings_per_node_0_0_0_0_0345_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0345|       pointer|
+|embeddings_per_node_0_0_0_0_0346_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0346|       pointer|
+|embeddings_per_node_0_0_0_0_0346_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0346|       pointer|
+|embeddings_per_node_0_0_0_0_0346_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0346|       pointer|
+|embeddings_per_node_0_0_0_0_0347_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0347|       pointer|
+|embeddings_per_node_0_0_0_0_0347_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0347|       pointer|
+|embeddings_per_node_0_0_0_0_0347_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0347|       pointer|
+|embeddings_per_node_0_0_0_0_0348_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0348|       pointer|
+|embeddings_per_node_0_0_0_0_0348_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0348|       pointer|
+|embeddings_per_node_0_0_0_0_0348_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0348|       pointer|
+|embeddings_per_node_0_0_0_0_0349_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0349|       pointer|
+|embeddings_per_node_0_0_0_0_0349_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0349|       pointer|
+|embeddings_per_node_0_0_0_0_0349_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0349|       pointer|
+|embeddings_per_node_0_0_0_0_0350_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0350|       pointer|
+|embeddings_per_node_0_0_0_0_0350_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0350|       pointer|
+|embeddings_per_node_0_0_0_0_0350_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0350|       pointer|
+|embeddings_per_node_0_0_0_0_0351_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0351|       pointer|
+|embeddings_per_node_0_0_0_0_0351_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0351|       pointer|
+|embeddings_per_node_0_0_0_0_0351_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0351|       pointer|
+|embeddings_per_node_0_0_0_0_0352_dout      |   in|   16|     ap_fifo|   embeddings_per_node_0_0_0_0_0352|       pointer|
+|embeddings_per_node_0_0_0_0_0352_empty_n   |   in|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0352|       pointer|
+|embeddings_per_node_0_0_0_0_0352_read      |  out|    1|     ap_fifo|   embeddings_per_node_0_0_0_0_0352|       pointer|
+|embeddings_per_node_0_0_0_0_035_dout       |   in|   16|     ap_fifo|    embeddings_per_node_0_0_0_0_035|       pointer|
+|embeddings_per_node_0_0_0_0_035_empty_n    |   in|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_035|       pointer|
+|embeddings_per_node_0_0_0_0_035_read       |  out|    1|     ap_fifo|    embeddings_per_node_0_0_0_0_035|       pointer|
+|embeddings_per_node_0_0_0_0_03553_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03553|       pointer|
+|embeddings_per_node_0_0_0_0_03553_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03553|       pointer|
+|embeddings_per_node_0_0_0_0_03553_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03553|       pointer|
+|embeddings_per_node_0_0_0_0_03554_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03554|       pointer|
+|embeddings_per_node_0_0_0_0_03554_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03554|       pointer|
+|embeddings_per_node_0_0_0_0_03554_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03554|       pointer|
+|embeddings_per_node_0_0_0_0_03555_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03555|       pointer|
+|embeddings_per_node_0_0_0_0_03555_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03555|       pointer|
+|embeddings_per_node_0_0_0_0_03555_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03555|       pointer|
+|embeddings_per_node_0_0_0_0_03556_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03556|       pointer|
+|embeddings_per_node_0_0_0_0_03556_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03556|       pointer|
+|embeddings_per_node_0_0_0_0_03556_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03556|       pointer|
+|embeddings_per_node_0_0_0_0_03557_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03557|       pointer|
+|embeddings_per_node_0_0_0_0_03557_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03557|       pointer|
+|embeddings_per_node_0_0_0_0_03557_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03557|       pointer|
+|embeddings_per_node_0_0_0_0_03558_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03558|       pointer|
+|embeddings_per_node_0_0_0_0_03558_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03558|       pointer|
+|embeddings_per_node_0_0_0_0_03558_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03558|       pointer|
+|embeddings_per_node_0_0_0_0_03559_dout     |   in|   16|     ap_fifo|  embeddings_per_node_0_0_0_0_03559|       pointer|
+|embeddings_per_node_0_0_0_0_03559_empty_n  |   in|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03559|       pointer|
+|embeddings_per_node_0_0_0_0_03559_read     |  out|    1|     ap_fifo|  embeddings_per_node_0_0_0_0_03559|       pointer|
+|message627_address0                        |  out|   11|   ap_memory|                         message627|         array|
+|message627_ce0                             |  out|    1|   ap_memory|                         message627|         array|
+|message627_we0                             |  out|    1|   ap_memory|                         message627|         array|
+|message627_d0                              |  out|   16|   ap_memory|                         message627|         array|
+|message627_address1                        |  out|   11|   ap_memory|                         message627|         array|
+|message627_ce1                             |  out|    1|   ap_memory|                         message627|         array|
+|message627_q1                              |   in|   16|   ap_memory|                         message627|         array|
+|message628_address0                        |  out|   11|   ap_memory|                         message628|         array|
+|message628_ce0                             |  out|    1|   ap_memory|                         message628|         array|
+|message628_we0                             |  out|    1|   ap_memory|                         message628|         array|
+|message628_d0                              |  out|   16|   ap_memory|                         message628|         array|
+|message628_address1                        |  out|   11|   ap_memory|                         message628|         array|
+|message628_ce1                             |  out|    1|   ap_memory|                         message628|         array|
+|message628_q1                              |   in|   16|   ap_memory|                         message628|         array|
+|message629_address0                        |  out|   11|   ap_memory|                         message629|         array|
+|message629_ce0                             |  out|    1|   ap_memory|                         message629|         array|
+|message629_we0                             |  out|    1|   ap_memory|                         message629|         array|
+|message629_d0                              |  out|   16|   ap_memory|                         message629|         array|
+|message629_address1                        |  out|   11|   ap_memory|                         message629|         array|
+|message629_ce1                             |  out|    1|   ap_memory|                         message629|         array|
+|message629_q1                              |   in|   16|   ap_memory|                         message629|         array|
+|message630_address0                        |  out|   11|   ap_memory|                         message630|         array|
+|message630_ce0                             |  out|    1|   ap_memory|                         message630|         array|
+|message630_we0                             |  out|    1|   ap_memory|                         message630|         array|
+|message630_d0                              |  out|   16|   ap_memory|                         message630|         array|
+|message630_address1                        |  out|   11|   ap_memory|                         message630|         array|
+|message630_ce1                             |  out|    1|   ap_memory|                         message630|         array|
+|message630_q1                              |   in|   16|   ap_memory|                         message630|         array|
+|message631_address0                        |  out|   11|   ap_memory|                         message631|         array|
+|message631_ce0                             |  out|    1|   ap_memory|                         message631|         array|
+|message631_we0                             |  out|    1|   ap_memory|                         message631|         array|
+|message631_d0                              |  out|   16|   ap_memory|                         message631|         array|
+|message631_address1                        |  out|   11|   ap_memory|                         message631|         array|
+|message631_ce1                             |  out|    1|   ap_memory|                         message631|         array|
+|message631_q1                              |   in|   16|   ap_memory|                         message631|         array|
+|message632_address0                        |  out|   11|   ap_memory|                         message632|         array|
+|message632_ce0                             |  out|    1|   ap_memory|                         message632|         array|
+|message632_we0                             |  out|    1|   ap_memory|                         message632|         array|
+|message632_d0                              |  out|   16|   ap_memory|                         message632|         array|
+|message632_address1                        |  out|   11|   ap_memory|                         message632|         array|
+|message632_ce1                             |  out|    1|   ap_memory|                         message632|         array|
+|message632_q1                              |   in|   16|   ap_memory|                         message632|         array|
+|message633_address0                        |  out|   11|   ap_memory|                         message633|         array|
+|message633_ce0                             |  out|    1|   ap_memory|                         message633|         array|
+|message633_we0                             |  out|    1|   ap_memory|                         message633|         array|
+|message633_d0                              |  out|   16|   ap_memory|                         message633|         array|
+|message633_address1                        |  out|   11|   ap_memory|                         message633|         array|
+|message633_ce1                             |  out|    1|   ap_memory|                         message633|         array|
+|message633_q1                              |   in|   16|   ap_memory|                         message633|         array|
+|message634_address0                        |  out|   11|   ap_memory|                         message634|         array|
+|message634_ce0                             |  out|    1|   ap_memory|                         message634|         array|
+|message634_we0                             |  out|    1|   ap_memory|                         message634|         array|
+|message634_d0                              |  out|   16|   ap_memory|                         message634|         array|
+|message634_address1                        |  out|   11|   ap_memory|                         message634|         array|
+|message634_ce1                             |  out|    1|   ap_memory|                         message634|         array|
+|message634_q1                              |   in|   16|   ap_memory|                         message634|         array|
+|num_of_edges_per_pe_1_3                    |   in|   32|     ap_none|            num_of_edges_per_pe_1_3|       pointer|
+|edge_embedding_weights_V_3_0_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_0_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_0|         array|
+|edge_embedding_weights_V_3_1_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_1_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_1|         array|
+|edge_embedding_weights_V_3_2_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_2_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_2|         array|
+|edge_embedding_weights_V_3_3_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|edge_embedding_weights_V_3_3_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_3|         array|
+|neighbor_tables_1_3_address0               |  out|    9|   ap_memory|                neighbor_tables_1_3|         array|
+|neighbor_tables_1_3_ce0                    |  out|    1|   ap_memory|                neighbor_tables_1_3|         array|
+|neighbor_tables_1_3_q0                     |   in|    7|   ap_memory|                neighbor_tables_1_3|         array|
+|edge_attrs_1_3_address0                    |  out|    9|   ap_memory|                     edge_attrs_1_3|         array|
+|edge_attrs_1_3_ce0                         |  out|    1|   ap_memory|                     edge_attrs_1_3|         array|
+|edge_attrs_1_3_q0                          |   in|   71|   ap_memory|                     edge_attrs_1_3|         array|
+|degree_tables_1_3_address0                 |  out|    9|   ap_memory|                  degree_tables_1_3|         array|
+|degree_tables_1_3_ce0                      |  out|    1|   ap_memory|                  degree_tables_1_3|         array|
+|degree_tables_1_3_q0                       |   in|   64|   ap_memory|                  degree_tables_1_3|         array|
+|edge_embedding_weights_V_3_4_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_4_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_4|         array|
+|edge_embedding_weights_V_3_5_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_5_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_5|         array|
+|edge_embedding_weights_V_3_6_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_6_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_6|         array|
+|edge_embedding_weights_V_3_7_address0      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_ce0           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_q0            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_address1      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_ce1           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_q1            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_address2      |  out|   10|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_ce2           |  out|    1|   ap_memory|       edge_embedding_weights_V_3_7|         array|
+|edge_embedding_weights_V_3_7_q2            |   in|   16|   ap_memory|       edge_embedding_weights_V_3_7|         array|
++-------------------------------------------+-----+-----+------------+-----------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.29>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%num_of_edges = load i32 %num_of_edges_per_pe_1_3" [example-4/src/message_passing.cc:39]   --->   Operation 5 'load' 'num_of_edges' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%cast = zext i32 %num_of_edges" [example-4/src/message_passing.cc:39]   --->   Operation 6 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [2/2] (2.29ns)   --->   "%bound = mul i36 %cast, i36 13" [example-4/src/message_passing.cc:39]   --->   Operation 7 'mul' 'bound' <Predicate = true> <Delay = 2.29> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 0.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 2.29>
+ST_2 : Operation 8 [1/1] (1.21ns)   --->   "%layer_num_1 = read i3 @_ssdm_op_Read.ap_fifo.i3P0A, i3 %layer_num"   --->   Operation 8 'read' 'layer_num_1' <Predicate = true> <Delay = 1.21> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.39> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 3> <Depth = 3> <FIFO>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%zext_ln712 = zext i3 %layer_num_1"   --->   Operation 9 'zext' 'zext_ln712' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.91ns)   --->   "%mul_ln712 = mul i7 %zext_ln712, i7 13"   --->   Operation 10 'mul' 'mul_ln712' <Predicate = true> <Delay = 0.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 0.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/2] (2.29ns)   --->   "%bound = mul i36 %cast, i36 13" [example-4/src/message_passing.cc:39]   --->   Operation 11 'mul' 'bound' <Predicate = true> <Delay = 2.29> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 0.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 12 'wait' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 13 [2/2] (0.00ns)   --->   "%call_ln39 = call void @message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2, i36 %bound, i16 %embeddings_per_node_0_0_0_0_0345, i16 %embeddings_per_node_0_0_0_0_0346, i16 %embeddings_per_node_0_0_0_0_0347, i16 %embeddings_per_node_0_0_0_0_0348, i16 %embeddings_per_node_0_0_0_0_0349, i16 %embeddings_per_node_0_0_0_0_0350, i16 %embeddings_per_node_0_0_0_0_0351, i16 %embeddings_per_node_0_0_0_0_0352, i7 %mul_ln712, i16 %message627, i16 %message628, i16 %message629, i16 %message630, i16 %message631, i16 %message632, i16 %message633, i16 %message634, i16 %embeddings_per_node_0_0_0_0_035, i16 %embeddings_per_node_0_0_0_0_03553, i16 %embeddings_per_node_0_0_0_0_03554, i16 %embeddings_per_node_0_0_0_0_03555, i16 %embeddings_per_node_0_0_0_0_03556, i16 %embeddings_per_node_0_0_0_0_03557, i16 %embeddings_per_node_0_0_0_0_03558, i16 %embeddings_per_node_0_0_0_0_03559, i16 %edge_embedding_weights_V_3_0, i16 %edge_embedding_weights_V_3_1, i16 %edge_embedding_weights_V_3_2, i16 %edge_embedding_weights_V_3_3, i7 %neighbor_tables_1_3, i71 %edge_attrs_1_3, i64 %degree_tables_1_3, i16 %edge_embedding_weights_V_3_4, i16 %edge_embedding_weights_V_3_5, i16 %edge_embedding_weights_V_3_6, i16 %edge_embedding_weights_V_3_7" [example-4/src/message_passing.cc:39]   --->   Operation 13 'call' 'call_ln39' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i3 %layer_num, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03559, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03558, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03557, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03556, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03555, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03554, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_03553, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_035, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0352, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0351, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0350, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0349, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0348, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0347, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0346, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_per_node_0_0_0_0_0345, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%specmemcore_ln32 = specmemcore void @_ssdm_op_SpecMemCore, void @edge_embedding_weights_V_0_0, void @edge_embedding_weights_V_0_1, void @edge_embedding_weights_V_0_2, void @edge_embedding_weights_V_0_3, void @edge_embedding_weights_V_0_4, void @edge_embedding_weights_V_0_5, void @edge_embedding_weights_V_0_6, void @edge_embedding_weights_V_0_7, void @edge_embedding_weights_V_1_0, void @edge_embedding_weights_V_1_1, void @edge_embedding_weights_V_1_2, void @edge_embedding_weights_V_1_3, void @edge_embedding_weights_V_1_4, void @edge_embedding_weights_V_1_5, void @edge_embedding_weights_V_1_6, void @edge_embedding_weights_V_1_7, void @edge_embedding_weights_V_2_0, void @edge_embedding_weights_V_2_1, void @edge_embedding_weights_V_2_2, void @edge_embedding_weights_V_2_3, void @edge_embedding_weights_V_2_4, void @edge_embedding_weights_V_2_5, void @edge_embedding_weights_V_2_6, void @edge_embedding_weights_V_2_7, i16 %edge_embedding_weights_V_3_0, i16 %edge_embedding_weights_V_3_1, i16 %edge_embedding_weights_V_3_2, i16 %edge_embedding_weights_V_3_3, i16 %edge_embedding_weights_V_3_4, i16 %edge_embedding_weights_V_3_5, i16 %edge_embedding_weights_V_3_6, i16 %edge_embedding_weights_V_3_7, i64 666, i64 206, i64 18446744073709551615" [example-4/src/message_passing.cc:32]   --->   Operation 31 'specmemcore' 'specmemcore_ln32' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 32 [1/2] (0.00ns)   --->   "%call_ln39 = call void @message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2, i36 %bound, i16 %embeddings_per_node_0_0_0_0_0345, i16 %embeddings_per_node_0_0_0_0_0346, i16 %embeddings_per_node_0_0_0_0_0347, i16 %embeddings_per_node_0_0_0_0_0348, i16 %embeddings_per_node_0_0_0_0_0349, i16 %embeddings_per_node_0_0_0_0_0350, i16 %embeddings_per_node_0_0_0_0_0351, i16 %embeddings_per_node_0_0_0_0_0352, i7 %mul_ln712, i16 %message627, i16 %message628, i16 %message629, i16 %message630, i16 %message631, i16 %message632, i16 %message633, i16 %message634, i16 %embeddings_per_node_0_0_0_0_035, i16 %embeddings_per_node_0_0_0_0_03553, i16 %embeddings_per_node_0_0_0_0_03554, i16 %embeddings_per_node_0_0_0_0_03555, i16 %embeddings_per_node_0_0_0_0_03556, i16 %embeddings_per_node_0_0_0_0_03557, i16 %embeddings_per_node_0_0_0_0_03558, i16 %embeddings_per_node_0_0_0_0_03559, i16 %edge_embedding_weights_V_3_0, i16 %edge_embedding_weights_V_3_1, i16 %edge_embedding_weights_V_3_2, i16 %edge_embedding_weights_V_3_3, i7 %neighbor_tables_1_3, i71 %edge_attrs_1_3, i64 %degree_tables_1_3, i16 %edge_embedding_weights_V_3_4, i16 %edge_embedding_weights_V_3_5, i16 %edge_embedding_weights_V_3_6, i16 %edge_embedding_weights_V_3_7" [example-4/src/message_passing.cc:39]   --->   Operation 32 'call' 'call_ln39' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%ret_ln95 = ret" [example-4/src/message_passing.cc:95]   --->   Operation 33 'ret' 'ret_ln95' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ layer_num]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0345]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0346]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0347]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0348]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0349]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0350]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0351]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_0352]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_035]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03553]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03554]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03555]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03556]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03557]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03558]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ embeddings_per_node_0_0_0_0_03559]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ message627]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message628]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message629]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message630]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message631]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message632]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message633]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ message634]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ num_of_edges_per_pe_1_3]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ edge_embedding_weights_V_3_0]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_2]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ neighbor_tables_1_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ edge_attrs_1_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ degree_tables_1_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_4]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_5]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_6]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+Port [ edge_embedding_weights_V_3_7]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11133333333333333]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+num_of_edges      (load         ) [ 00000]
+cast              (zext         ) [ 00100]
+layer_num_1       (read         ) [ 00000]
+zext_ln712        (zext         ) [ 00000]
+mul_ln712         (mul          ) [ 00011]
+bound             (mul          ) [ 00011]
+empty             (wait         ) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specinterface_ln0 (specinterface) [ 00000]
+specmemcore_ln32  (specmemcore  ) [ 00000]
+call_ln39         (call         ) [ 00000]
+ret_ln95          (ret          ) [ 00000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="layer_num">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="layer_num"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="embeddings_per_node_0_0_0_0_0345">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0345"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="embeddings_per_node_0_0_0_0_0346">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0346"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="embeddings_per_node_0_0_0_0_0347">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0347"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="embeddings_per_node_0_0_0_0_0348">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0348"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="embeddings_per_node_0_0_0_0_0349">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0349"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="embeddings_per_node_0_0_0_0_0350">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0350"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="embeddings_per_node_0_0_0_0_0351">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0351"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="embeddings_per_node_0_0_0_0_0352">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_0352"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="embeddings_per_node_0_0_0_0_035">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_035"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="embeddings_per_node_0_0_0_0_03553">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03553"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="embeddings_per_node_0_0_0_0_03554">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03554"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="embeddings_per_node_0_0_0_0_03555">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03555"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="embeddings_per_node_0_0_0_0_03556">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03556"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="embeddings_per_node_0_0_0_0_03557">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03557"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="embeddings_per_node_0_0_0_0_03558">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03558"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="embeddings_per_node_0_0_0_0_03559">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="embeddings_per_node_0_0_0_0_03559"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="message627">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message627"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="message628">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message628"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="message629">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message629"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="message630">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message630"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="message631">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message631"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="message632">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message632"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="message633">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message633"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="message634">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message634"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="num_of_edges_per_pe_1_3">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="num_of_edges_per_pe_1_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="edge_embedding_weights_V_3_0">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_0"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="edge_embedding_weights_V_3_1">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_1"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1000" name="edge_embedding_weights_V_3_2">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_2"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1000" name="edge_embedding_weights_V_3_3">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_3"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1000" name="neighbor_tables_1_3">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="neighbor_tables_1_3"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1000" name="edge_attrs_1_3">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_attrs_1_3"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1000" name="degree_tables_1_3">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="degree_tables_1_3"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1000" name="edge_embedding_weights_V_3_4">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_4"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1000" name="edge_embedding_weights_V_3_5">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_5"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1000" name="edge_embedding_weights_V_3_6">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_6"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1000" name="edge_embedding_weights_V_3_7">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_3_7"/><MemPortTyVec>1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.i3P0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Wait"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ScalarProp_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1001" name="const_104">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1001" name="const_106">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1001" name="const_108">
+<pin_list>
+<pin id="109" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="110" class="1001" name="const_110">
+<pin_list>
+<pin id="111" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="112" class="1001" name="const_112">
+<pin_list>
+<pin id="113" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="114" class="1001" name="const_114">
+<pin_list>
+<pin id="115" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_0_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="116" class="1001" name="const_116">
+<pin_list>
+<pin id="117" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="118" class="1001" name="const_118">
+<pin_list>
+<pin id="119" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="120" class="1001" name="const_120">
+<pin_list>
+<pin id="121" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="122" class="1001" name="const_122">
+<pin_list>
+<pin id="123" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="124" class="1001" name="const_124">
+<pin_list>
+<pin id="125" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="126" class="1001" name="const_126">
+<pin_list>
+<pin id="127" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="128" class="1001" name="const_128">
+<pin_list>
+<pin id="129" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="130" class="1001" name="const_130">
+<pin_list>
+<pin id="131" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_1_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="132" class="1001" name="const_132">
+<pin_list>
+<pin id="133" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="134" class="1001" name="const_134">
+<pin_list>
+<pin id="135" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="136" class="1001" name="const_136">
+<pin_list>
+<pin id="137" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="138" class="1001" name="const_138">
+<pin_list>
+<pin id="139" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="140" class="1001" name="const_140">
+<pin_list>
+<pin id="141" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="142" class="1001" name="const_142">
+<pin_list>
+<pin id="143" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="144" class="1001" name="const_144">
+<pin_list>
+<pin id="145" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="146" class="1001" name="const_146">
+<pin_list>
+<pin id="147" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_embedding_weights_V_2_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="148" class="1001" name="const_148">
+<pin_list>
+<pin id="149" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="150" class="1001" name="const_150">
+<pin_list>
+<pin id="151" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="152" class="1001" name="const_152">
+<pin_list>
+<pin id="153" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="layer_num_1_read_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="3" slack="0"/>
+<pin id="156" dir="0" index="1" bw="3" slack="0"/>
+<pin id="157" dir="1" index="2" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="layer_num_1/2 "/>
+</bind>
+</comp>
+
+<comp id="160" class="1004" name="grp_message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="0" slack="0"/>
+<pin id="162" dir="0" index="1" bw="36" slack="1"/>
+<pin id="163" dir="0" index="2" bw="16" slack="0"/>
+<pin id="164" dir="0" index="3" bw="16" slack="0"/>
+<pin id="165" dir="0" index="4" bw="16" slack="0"/>
+<pin id="166" dir="0" index="5" bw="16" slack="0"/>
+<pin id="167" dir="0" index="6" bw="16" slack="0"/>
+<pin id="168" dir="0" index="7" bw="16" slack="0"/>
+<pin id="169" dir="0" index="8" bw="16" slack="0"/>
+<pin id="170" dir="0" index="9" bw="16" slack="0"/>
+<pin id="171" dir="0" index="10" bw="7" slack="1"/>
+<pin id="172" dir="0" index="11" bw="16" slack="0"/>
+<pin id="173" dir="0" index="12" bw="16" slack="0"/>
+<pin id="174" dir="0" index="13" bw="16" slack="0"/>
+<pin id="175" dir="0" index="14" bw="16" slack="0"/>
+<pin id="176" dir="0" index="15" bw="16" slack="0"/>
+<pin id="177" dir="0" index="16" bw="16" slack="0"/>
+<pin id="178" dir="0" index="17" bw="16" slack="0"/>
+<pin id="179" dir="0" index="18" bw="16" slack="0"/>
+<pin id="180" dir="0" index="19" bw="16" slack="0"/>
+<pin id="181" dir="0" index="20" bw="16" slack="0"/>
+<pin id="182" dir="0" index="21" bw="16" slack="0"/>
+<pin id="183" dir="0" index="22" bw="16" slack="0"/>
+<pin id="184" dir="0" index="23" bw="16" slack="0"/>
+<pin id="185" dir="0" index="24" bw="16" slack="0"/>
+<pin id="186" dir="0" index="25" bw="16" slack="0"/>
+<pin id="187" dir="0" index="26" bw="16" slack="0"/>
+<pin id="188" dir="0" index="27" bw="16" slack="0"/>
+<pin id="189" dir="0" index="28" bw="16" slack="0"/>
+<pin id="190" dir="0" index="29" bw="16" slack="0"/>
+<pin id="191" dir="0" index="30" bw="16" slack="0"/>
+<pin id="192" dir="0" index="31" bw="7" slack="0"/>
+<pin id="193" dir="0" index="32" bw="71" slack="0"/>
+<pin id="194" dir="0" index="33" bw="64" slack="0"/>
+<pin id="195" dir="0" index="34" bw="16" slack="0"/>
+<pin id="196" dir="0" index="35" bw="16" slack="0"/>
+<pin id="197" dir="0" index="36" bw="16" slack="0"/>
+<pin id="198" dir="0" index="37" bw="16" slack="0"/>
+<pin id="199" dir="1" index="38" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln39/3 "/>
+</bind>
+</comp>
+
+<comp id="236" class="1004" name="num_of_edges_load_fu_236">
+<pin_list>
+<pin id="237" dir="0" index="0" bw="32" slack="0"/>
+<pin id="238" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="num_of_edges/1 "/>
+</bind>
+</comp>
+
+<comp id="240" class="1004" name="cast_fu_240">
+<pin_list>
+<pin id="241" dir="0" index="0" bw="32" slack="0"/>
+<pin id="242" dir="1" index="1" bw="36" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="cast/1 "/>
+</bind>
+</comp>
+
+<comp id="244" class="1004" name="grp_fu_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="32" slack="0"/>
+<pin id="246" dir="0" index="1" bw="5" slack="0"/>
+<pin id="247" dir="1" index="2" bw="36" slack="1"/>
+</pin_list>
+<bind>
+<opcode="mul(12) " fcode="mul"/>
+<opset="bound/1 "/>
+</bind>
+</comp>
+
+<comp id="250" class="1004" name="zext_ln712_fu_250">
+<pin_list>
+<pin id="251" dir="0" index="0" bw="3" slack="0"/>
+<pin id="252" dir="1" index="1" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln712/2 "/>
+</bind>
+</comp>
+
+<comp id="254" class="1004" name="mul_ln712_fu_254">
+<pin_list>
+<pin id="255" dir="0" index="0" bw="3" slack="0"/>
+<pin id="256" dir="0" index="1" bw="5" slack="0"/>
+<pin id="257" dir="1" index="2" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opcode="mul(12) " fcode="mul"/>
+<opset="mul_ln712/2 "/>
+</bind>
+</comp>
+
+<comp id="260" class="1005" name="cast_reg_260">
+<pin_list>
+<pin id="261" dir="0" index="0" bw="36" slack="1"/>
+<pin id="262" dir="1" index="1" bw="36" slack="1"/>
+</pin_list>
+<bind>
+<opset="cast "/>
+</bind>
+</comp>
+
+<comp id="265" class="1005" name="mul_ln712_reg_265">
+<pin_list>
+<pin id="266" dir="0" index="0" bw="7" slack="1"/>
+<pin id="267" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="mul_ln712 "/>
+</bind>
+</comp>
+
+<comp id="270" class="1005" name="bound_reg_270">
+<pin_list>
+<pin id="271" dir="0" index="0" bw="36" slack="1"/>
+<pin id="272" dir="1" index="1" bw="36" slack="1"/>
+</pin_list>
+<bind>
+<opset="bound "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="158"><net_src comp="76" pin="0"/><net_sink comp="154" pin=0"/></net>
+
+<net id="159"><net_src comp="0" pin="0"/><net_sink comp="154" pin=1"/></net>
+
+<net id="200"><net_src comp="82" pin="0"/><net_sink comp="160" pin=0"/></net>
+
+<net id="201"><net_src comp="2" pin="0"/><net_sink comp="160" pin=2"/></net>
+
+<net id="202"><net_src comp="4" pin="0"/><net_sink comp="160" pin=3"/></net>
+
+<net id="203"><net_src comp="6" pin="0"/><net_sink comp="160" pin=4"/></net>
+
+<net id="204"><net_src comp="8" pin="0"/><net_sink comp="160" pin=5"/></net>
+
+<net id="205"><net_src comp="10" pin="0"/><net_sink comp="160" pin=6"/></net>
+
+<net id="206"><net_src comp="12" pin="0"/><net_sink comp="160" pin=7"/></net>
+
+<net id="207"><net_src comp="14" pin="0"/><net_sink comp="160" pin=8"/></net>
+
+<net id="208"><net_src comp="16" pin="0"/><net_sink comp="160" pin=9"/></net>
+
+<net id="209"><net_src comp="34" pin="0"/><net_sink comp="160" pin=11"/></net>
+
+<net id="210"><net_src comp="36" pin="0"/><net_sink comp="160" pin=12"/></net>
+
+<net id="211"><net_src comp="38" pin="0"/><net_sink comp="160" pin=13"/></net>
+
+<net id="212"><net_src comp="40" pin="0"/><net_sink comp="160" pin=14"/></net>
+
+<net id="213"><net_src comp="42" pin="0"/><net_sink comp="160" pin=15"/></net>
+
+<net id="214"><net_src comp="44" pin="0"/><net_sink comp="160" pin=16"/></net>
+
+<net id="215"><net_src comp="46" pin="0"/><net_sink comp="160" pin=17"/></net>
+
+<net id="216"><net_src comp="48" pin="0"/><net_sink comp="160" pin=18"/></net>
+
+<net id="217"><net_src comp="18" pin="0"/><net_sink comp="160" pin=19"/></net>
+
+<net id="218"><net_src comp="20" pin="0"/><net_sink comp="160" pin=20"/></net>
+
+<net id="219"><net_src comp="22" pin="0"/><net_sink comp="160" pin=21"/></net>
+
+<net id="220"><net_src comp="24" pin="0"/><net_sink comp="160" pin=22"/></net>
+
+<net id="221"><net_src comp="26" pin="0"/><net_sink comp="160" pin=23"/></net>
+
+<net id="222"><net_src comp="28" pin="0"/><net_sink comp="160" pin=24"/></net>
+
+<net id="223"><net_src comp="30" pin="0"/><net_sink comp="160" pin=25"/></net>
+
+<net id="224"><net_src comp="32" pin="0"/><net_sink comp="160" pin=26"/></net>
+
+<net id="225"><net_src comp="52" pin="0"/><net_sink comp="160" pin=27"/></net>
+
+<net id="226"><net_src comp="54" pin="0"/><net_sink comp="160" pin=28"/></net>
+
+<net id="227"><net_src comp="56" pin="0"/><net_sink comp="160" pin=29"/></net>
+
+<net id="228"><net_src comp="58" pin="0"/><net_sink comp="160" pin=30"/></net>
+
+<net id="229"><net_src comp="60" pin="0"/><net_sink comp="160" pin=31"/></net>
+
+<net id="230"><net_src comp="62" pin="0"/><net_sink comp="160" pin=32"/></net>
+
+<net id="231"><net_src comp="64" pin="0"/><net_sink comp="160" pin=33"/></net>
+
+<net id="232"><net_src comp="66" pin="0"/><net_sink comp="160" pin=34"/></net>
+
+<net id="233"><net_src comp="68" pin="0"/><net_sink comp="160" pin=35"/></net>
+
+<net id="234"><net_src comp="70" pin="0"/><net_sink comp="160" pin=36"/></net>
+
+<net id="235"><net_src comp="72" pin="0"/><net_sink comp="160" pin=37"/></net>
+
+<net id="239"><net_src comp="50" pin="0"/><net_sink comp="236" pin=0"/></net>
+
+<net id="243"><net_src comp="236" pin="1"/><net_sink comp="240" pin=0"/></net>
+
+<net id="248"><net_src comp="240" pin="1"/><net_sink comp="244" pin=0"/></net>
+
+<net id="249"><net_src comp="74" pin="0"/><net_sink comp="244" pin=1"/></net>
+
+<net id="253"><net_src comp="154" pin="2"/><net_sink comp="250" pin=0"/></net>
+
+<net id="258"><net_src comp="250" pin="1"/><net_sink comp="254" pin=0"/></net>
+
+<net id="259"><net_src comp="78" pin="0"/><net_sink comp="254" pin=1"/></net>
+
+<net id="263"><net_src comp="240" pin="1"/><net_sink comp="260" pin=0"/></net>
+
+<net id="264"><net_src comp="260" pin="1"/><net_sink comp="244" pin=0"/></net>
+
+<net id="268"><net_src comp="254" pin="2"/><net_sink comp="265" pin=0"/></net>
+
+<net id="269"><net_src comp="265" pin="1"/><net_sink comp="160" pin=10"/></net>
+
+<net id="273"><net_src comp="244" pin="2"/><net_sink comp="270" pin=0"/></net>
+
+<net id="274"><net_src comp="270" pin="1"/><net_sink comp="160" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: message627 | {3 4 }
+	Port: message628 | {3 4 }
+	Port: message629 | {3 4 }
+	Port: message630 | {3 4 }
+	Port: message631 | {3 4 }
+	Port: message632 | {3 4 }
+	Port: message633 | {3 4 }
+	Port: message634 | {3 4 }
+	Port: num_of_edges_per_pe_1_3 | {}
+	Port: edge_embedding_weights_V_3_0 | {}
+	Port: edge_embedding_weights_V_3_1 | {}
+	Port: edge_embedding_weights_V_3_2 | {}
+	Port: edge_embedding_weights_V_3_3 | {}
+	Port: neighbor_tables_1_3 | {}
+	Port: edge_attrs_1_3 | {}
+	Port: degree_tables_1_3 | {}
+	Port: edge_embedding_weights_V_3_4 | {}
+	Port: edge_embedding_weights_V_3_5 | {}
+	Port: edge_embedding_weights_V_3_6 | {}
+	Port: edge_embedding_weights_V_3_7 | {}
+ - Input state : 
+	Port: message_passing_pe21 : layer_num | {2 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0345 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0346 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0347 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0348 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0349 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0350 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0351 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_0352 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_035 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03553 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03554 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03555 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03556 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03557 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03558 | {3 4 }
+	Port: message_passing_pe21 : embeddings_per_node_0_0_0_0_03559 | {3 4 }
+	Port: message_passing_pe21 : message627 | {3 4 }
+	Port: message_passing_pe21 : message628 | {3 4 }
+	Port: message_passing_pe21 : message629 | {3 4 }
+	Port: message_passing_pe21 : message630 | {3 4 }
+	Port: message_passing_pe21 : message631 | {3 4 }
+	Port: message_passing_pe21 : message632 | {3 4 }
+	Port: message_passing_pe21 : message633 | {3 4 }
+	Port: message_passing_pe21 : message634 | {3 4 }
+	Port: message_passing_pe21 : num_of_edges_per_pe_1_3 | {1 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_0 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_1 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_2 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_3 | {3 4 }
+	Port: message_passing_pe21 : neighbor_tables_1_3 | {3 4 }
+	Port: message_passing_pe21 : edge_attrs_1_3 | {3 4 }
+	Port: message_passing_pe21 : degree_tables_1_3 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_4 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_5 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_6 | {3 4 }
+	Port: message_passing_pe21 : edge_embedding_weights_V_3_7 | {3 4 }
+  - Chain level:
+	State 1
+		cast : 1
+		bound : 2
+	State 2
+		mul_ln712 : 1
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+| Operation|                              Functional Unit                             |   BRAM  |   DSP   |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   call   | grp_message_passing_pe21_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_50_2_fu_160 |    0    |    4    |  19.737 |   2311  |   2414  |    0    |
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|    mul   |                                grp_fu_244                                |    0    |    1    |    0    |   165   |    49   |    0    |
+|          |                             mul_ln712_fu_254                             |    0    |    0    |    0    |    0    |    17   |    0    |
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   read   |                          layer_num_1_read_fu_154                         |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   zext   |                                cast_fu_240                               |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |                             zext_ln712_fu_250                            |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   Total  |                                                                          |    0    |    5    |  19.737 |   2476  |   2480  |    0    |
+|----------|--------------------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------+--------+
+|                 |   FF   |
++-----------------+--------+
+|  bound_reg_270  |   36   |
+|   cast_reg_260  |   36   |
+|mul_ln712_reg_265|    7   |
++-----------------+--------+
+|      Total      |   79   |
++-----------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------|------|------|------|--------||---------||---------|
+|    Comp    |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------|------|------|------|--------||---------||---------|
+| grp_fu_244 |  p0  |   2  |  32  |   64   ||    9    |
+|------------|------|------|------|--------||---------||---------|
+|    Total   |      |      |      |   64   ||  0.387  ||    9    |
+|------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    0   |    5   |   19   |  2476  |  2480  |    0   |
+|   Memory  |    -   |    -   |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    -   |    0   |    -   |    9   |    -   |
+|  Register |    -   |    -   |    -   |   79   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    0   |    5   |   20   |  2555  |  2489  |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

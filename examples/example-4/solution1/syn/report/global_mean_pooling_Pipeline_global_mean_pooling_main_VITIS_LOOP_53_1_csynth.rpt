@@ -1,0 +1,200 @@
+
+
+================================================================
+== Vitis HLS Report for 'global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1'
+================================================================
+* Date:           Fri May  3 00:29:36 2024
+
+* Version:        2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)
+* Project:        example-4
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.394 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      453|      453|  1.510 us|  1.510 us|  453|  453|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |                  Loop Name                 |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- global_mean_pooling_main_VITIS_LOOP_53_1  |      451|      451|         3|          1|          1|   450|       yes|
+        +--------------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+--------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++---------------------+---------+------+---------+--------+-----+
+|DSP                  |        -|     -|        -|       -|    -|
+|Expression           |        -|     -|        0|     339|    -|
+|FIFO                 |        -|     -|        -|       -|    -|
+|Instance             |        -|     -|        -|       -|    -|
+|Memory               |        -|     -|        -|       -|    -|
+|Multiplexer          |        -|     -|        -|      90|    -|
+|Register             |        -|     -|      127|       -|    -|
++---------------------+---------+------+---------+--------+-----+
+|Total                |        0|     0|      127|     429|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available SLR        |     1344|  2976|   871680|  435840|  320|
++---------------------+---------+------+---------+--------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available            |     2688|  5952|  1743360|  871680|  640|
++---------------------+---------+------+---------+--------+-----+
+|Utilization (%)      |        0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln50_fu_157_p2                |         +|   0|  0|  45|          38|           1|
+    |add_ln53_fu_266_p2                |         +|   0|  0|  14|           7|           2|
+    |h_graph_el_V_11_fu_260_p2         |         +|   0|  0|  23|          16|          16|
+    |h_graph_el_V_12_fu_294_p2         |         +|   0|  0|  23|          16|          16|
+    |h_graph_el_V_8_fu_238_p2          |         +|   0|  0|  23|          16|          16|
+    |h_graph_el_V_9_fu_282_p2          |         +|   0|  0|  23|          16|          16|
+    |i_7_fu_174_p2                     |         +|   0|  0|  38|          31|           1|
+    |ap_block_pp0_stage0_11001         |       and|   0|  0|   2|           1|           1|
+    |io_acc_block_signal_op32          |       and|   0|  0|   2|           1|           1|
+    |io_acc_block_signal_op35          |       and|   0|  0|   2|           1|           1|
+    |cmp2021_fu_200_p2                 |      icmp|   0|  0|  19|          31|           1|
+    |cmp20_mid1_fu_194_p2              |      icmp|   0|  0|  19|          31|           1|
+    |icmp_ln50_fu_152_p2               |      icmp|   0|  0|  20|          38|          38|
+    |icmp_ln53_fu_180_p2               |      icmp|   0|  0|  10|           7|           6|
+    |ap_block_state3_pp0_stage0_iter2  |        or|   0|  0|   2|           1|           1|
+    |select_ln50_1_fu_206_p3           |    select|   0|  0|   2|           1|           1|
+    |select_ln50_2_fu_214_p3           |    select|   0|  0|  31|           1|          31|
+    |select_ln50_fu_186_p3             |    select|   0|  0|   7|           1|           7|
+    |sums_V_0_d0                       |    select|   0|  0|  16|           1|          16|
+    |sums_V_1_d0                       |    select|   0|  0|  16|           1|          16|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0| 339|         257|         191|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                   |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1       |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2       |   9|          2|    1|          2|
+    |dim_fu_66                     |   9|          2|    7|         14|
+    |embeddings_0_0_0_0_012_blk_n  |   9|          2|    1|          2|
+    |embeddings_0_0_0_0_013_blk_n  |   9|          2|    1|          2|
+    |embeddings_0_0_0_0_01_blk_n   |   9|          2|    1|          2|
+    |embeddings_0_0_0_0_0_blk_n    |   9|          2|    1|          2|
+    |i_fu_70                       |   9|          2|   31|         62|
+    |indvar_flatten_fu_74          |   9|          2|   38|         76|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |  90|         20|   83|        166|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                         |   1|   0|    1|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
+    |dim_fu_66                         |   7|   0|    7|          0|
+    |h_graph_el_V_11_reg_354           |  16|   0|   16|          0|
+    |h_graph_el_V_8_reg_342            |  16|   0|   16|          0|
+    |i_fu_70                           |  31|   0|   31|          0|
+    |indvar_flatten_fu_74              |  38|   0|   38|          0|
+    |select_ln50_1_reg_336             |   1|   0|    1|          0|
+    |sums_V_0_addr_reg_348             |   6|   0|    6|          0|
+    |sums_V_1_addr_reg_360             |   6|   0|    6|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 127|   0|  127|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+-----------------------------------------------------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |                             Source Object                             |    C Type    |
++--------------------------------+-----+-----+------------+-----------------------------------------------------------------------+--------------+
+|ap_clk                          |   in|    1|  ap_ctrl_hs|  global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1|  return value|
+|ap_rst                          |   in|    1|  ap_ctrl_hs|  global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1|  return value|
+|ap_start                        |   in|    1|  ap_ctrl_hs|  global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1|  return value|
+|ap_done                         |  out|    1|  ap_ctrl_hs|  global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1|  return value|
+|ap_idle                         |  out|    1|  ap_ctrl_hs|  global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1|  return value|
+|ap_ready                        |  out|    1|  ap_ctrl_hs|  global_mean_pooling_Pipeline_global_mean_pooling_main_VITIS_LOOP_53_1|  return value|
+|embeddings_0_0_0_0_0_dout       |   in|   16|     ap_fifo|                                                   embeddings_0_0_0_0_0|       pointer|
+|embeddings_0_0_0_0_0_empty_n    |   in|    1|     ap_fifo|                                                   embeddings_0_0_0_0_0|       pointer|
+|embeddings_0_0_0_0_0_read       |  out|    1|     ap_fifo|                                                   embeddings_0_0_0_0_0|       pointer|
+|embeddings_0_0_0_0_01_dout      |   in|   16|     ap_fifo|                                                  embeddings_0_0_0_0_01|       pointer|
+|embeddings_0_0_0_0_01_empty_n   |   in|    1|     ap_fifo|                                                  embeddings_0_0_0_0_01|       pointer|
+|embeddings_0_0_0_0_01_read      |  out|    1|     ap_fifo|                                                  embeddings_0_0_0_0_01|       pointer|
+|embeddings_0_0_0_0_012_dout     |   in|   16|     ap_fifo|                                                 embeddings_0_0_0_0_012|       pointer|
+|embeddings_0_0_0_0_012_empty_n  |   in|    1|     ap_fifo|                                                 embeddings_0_0_0_0_012|       pointer|
+|embeddings_0_0_0_0_012_read     |  out|    1|     ap_fifo|                                                 embeddings_0_0_0_0_012|       pointer|
+|embeddings_0_0_0_0_013_dout     |   in|   16|     ap_fifo|                                                 embeddings_0_0_0_0_013|       pointer|
+|embeddings_0_0_0_0_013_empty_n  |   in|    1|     ap_fifo|                                                 embeddings_0_0_0_0_013|       pointer|
+|embeddings_0_0_0_0_013_read     |  out|    1|     ap_fifo|                                                 embeddings_0_0_0_0_013|       pointer|
+|bound                           |   in|   38|     ap_none|                                                                  bound|        scalar|
+|sums_V_0_address0               |  out|    6|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_0_ce0                    |  out|    1|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_0_we0                    |  out|    1|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_0_d0                     |  out|   16|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_0_address1               |  out|    6|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_0_ce1                    |  out|    1|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_0_q1                     |   in|   16|   ap_memory|                                                               sums_V_0|         array|
+|sums_V_1_address0               |  out|    6|   ap_memory|                                                               sums_V_1|         array|
+|sums_V_1_ce0                    |  out|    1|   ap_memory|                                                               sums_V_1|         array|
+|sums_V_1_we0                    |  out|    1|   ap_memory|                                                               sums_V_1|         array|
+|sums_V_1_d0                     |  out|   16|   ap_memory|                                                               sums_V_1|         array|
+|sums_V_1_address1               |  out|    6|   ap_memory|                                                               sums_V_1|         array|
+|sums_V_1_ce1                    |  out|    1|   ap_memory|                                                               sums_V_1|         array|
+|sums_V_1_q1                     |   in|   16|   ap_memory|                                                               sums_V_1|         array|
++--------------------------------+-----+-----+------------+-----------------------------------------------------------------------+--------------+
+

@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'load_graph_Pipeline_VITIS_LOOP_109_1'
+================================================================
+* Date:           Fri May  3 00:25:19 2024
+
+* Version:        2021.1.1 (Build 3286242 on Wed Jul 28 13:09:46 MDT 2021)
+* Project:        example-4
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu50-fsvh2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.059 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       21|       21|  69.993 ns|  69.993 ns|   21|   21|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_109_1  |       19|       19|         1|          1|          1|    19|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+--------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++---------------------+---------+------+---------+--------+-----+
+|DSP                  |        -|     -|        -|       -|    -|
+|Expression           |        -|     -|        0|      59|    -|
+|FIFO                 |        -|     -|        -|       -|    -|
+|Instance             |        -|     -|        -|       -|    -|
+|Memory               |        -|     -|        -|       -|    -|
+|Multiplexer          |        -|     -|        -|      36|    -|
+|Register             |        -|     -|       34|       -|    -|
++---------------------+---------+------+---------+--------+-----+
+|Total                |        0|     0|       34|      95|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available SLR        |     1344|  2976|   871680|  435840|  320|
++---------------------+---------+------+---------+--------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available            |     2688|  5952|  1743360|  871680|  640|
++---------------------+---------+------+---------+--------+-----+
+|Utilization (%)      |        0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln109_fu_86_p2   |         +|   0|  0|  39|          32|           1|
+    |icmp_ln109_fu_80_p2  |      icmp|   0|  0|  20|          32|          32|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  59|          64|          33|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |ap_done_int                |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_5       |   9|          2|   32|         64|
+    |full_pe_degree_tables_we0  |   9|          2|   16|         32|
+    |i_fu_36                    |   9|          2|   32|         64|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      |  36|          8|   81|        162|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+----+----+-----+-----------+
+    |     Name    | FF | LUT| Bits| Const Bits|
+    +-------------+----+----+-----+-----------+
+    |ap_CS_fsm    |   1|   0|    1|          0|
+    |ap_done_reg  |   1|   0|    1|          0|
+    |i_fu_36      |  32|   0|   32|          0|
+    +-------------+----+----+-----+-----------+
+    |Total        |  34|   0|   34|          0|
+    +-------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+--------------------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |             Source Object            |    C Type    |
++--------------------------------+-----+-----+------------+--------------------------------------+--------------+
+|ap_clk                          |   in|    1|  ap_ctrl_hs|  load_graph_Pipeline_VITIS_LOOP_109_1|  return value|
+|ap_rst                          |   in|    1|  ap_ctrl_hs|  load_graph_Pipeline_VITIS_LOOP_109_1|  return value|
+|ap_start                        |   in|    1|  ap_ctrl_hs|  load_graph_Pipeline_VITIS_LOOP_109_1|  return value|
+|ap_done                         |  out|    1|  ap_ctrl_hs|  load_graph_Pipeline_VITIS_LOOP_109_1|  return value|
+|ap_idle                         |  out|    1|  ap_ctrl_hs|  load_graph_Pipeline_VITIS_LOOP_109_1|  return value|
+|ap_ready                        |  out|    1|  ap_ctrl_hs|  load_graph_Pipeline_VITIS_LOOP_109_1|  return value|
+|num_of_nodes                    |   in|   32|     ap_none|                          num_of_nodes|        scalar|
+|full_pe_degree_tables_address0  |  out|    9|   ap_memory|                 full_pe_degree_tables|         array|
+|full_pe_degree_tables_ce0       |  out|    1|   ap_memory|                 full_pe_degree_tables|         array|
+|full_pe_degree_tables_we0       |  out|   16|   ap_memory|                 full_pe_degree_tables|         array|
+|full_pe_degree_tables_d0        |  out|  128|   ap_memory|                 full_pe_degree_tables|         array|
+|degree_table_1_address0         |  out|    9|   ap_memory|                        degree_table_1|         array|
+|degree_table_1_ce0              |  out|    1|   ap_memory|                        degree_table_1|         array|
+|degree_table_1_we0              |  out|    1|   ap_memory|                        degree_table_1|         array|
+|degree_table_1_d0               |  out|   32|   ap_memory|                        degree_table_1|         array|
++--------------------------------+-----+-----+------------+--------------------------------------+--------------+
+

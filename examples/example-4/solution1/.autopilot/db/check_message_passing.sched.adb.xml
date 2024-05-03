@@ -1,0 +1,363 @@
+<stg><name>check_message_passing</name>
+
+
+<trans_list>
+
+<trans id="25" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln88" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="26" from="1" to="4">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln88" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="27" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="28" from="4" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="191" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %num_of_nodes, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>FIFO_SRL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="192" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1 %num_of_nodes_1 = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %num_of_nodes
+
+]]></Node>
+<StgValue><ssdm name="num_of_nodes_1"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="193" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %result, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>FIFO_SRL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="194" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+:3 %result_read = read i64 @_ssdm_op_Read.ap_fifo.i64P0A, i64 %result
+
+]]></Node>
+<StgValue><ssdm name="result_read"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="195" bw="0" op_0_bw="0" op_1_bw="3" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i3 %layer_num, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>FIFO_SRL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="196" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+:5 %layer_num_5 = read i3 @_ssdm_op_Read.ap_fifo.i3P0A, i3 %layer_num
+
+]]></Node>
+<StgValue><ssdm name="layer_num_5"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="197" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_0_0_0_0_013, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="198" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:7 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_0_0_0_0_012, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="199" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_0_0_0_0_01, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="200" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:9 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %embeddings_0_0_0_0_0, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="201" bw="0" op_0_bw="0" op_1_bw="1024" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:10 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1024 %mem, void @empty_30, i32 0, i32 0, void @empty_8, i32 64, i32 1, void @empty_13, void @empty_12, void @empty_8, i32 16, i32 16, i32 16, i32 16, void @empty_8, void @empty_8
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="202" bw="1" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+:11 %icmp_ln88 = icmp_eq  i3 %layer_num_5, i3 5
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln88"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="203" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:12 %br_ln88 = br i1 %icmp_ln88, void, void
+
+]]></Node>
+<StgValue><ssdm name="br_ln88"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="18" st_id="2" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="205" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="3" op_38_bw="32" op_39_bw="8" op_40_bw="32" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="7" op_46_bw="71" op_47_bw="64" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="32" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="7" op_58_bw="71" op_59_bw="64" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="32" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="7" op_70_bw="71" op_71_bw="64" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="32" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="7" op_82_bw="71" op_83_bw="64" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16">
+<![CDATA[
+:0 %call_ln97 = call void @message_passing_all_pes, i16 %embeddings_0_0_0_0_0, i16 %embeddings_0_0_0_0_01, i16 %embeddings_0_0_0_0_012, i16 %embeddings_0_0_0_0_013, i16 %message, i16 %message4, i16 %message5, i16 %message6, i16 %message7, i16 %message8, i16 %message9, i16 %message10, i16 %message2, i16 %message211, i16 %message212, i16 %message213, i16 %message214, i16 %message215, i16 %message216, i16 %message217, i16 %message3, i16 %message318, i16 %message319, i16 %message320, i16 %message321, i16 %message322, i16 %message323, i16 %message324, i16 %message425, i16 %message426, i16 %message427, i16 %message428, i16 %message429, i16 %message430, i16 %message431, i16 %message432, i3 %layer_num_5, i32 %num_of_nodes_1, i8 %pes_per_node, i32 %num_of_edges_per_pe_1_0, i16 %edge_embedding_weights_V_0_0, i16 %edge_embedding_weights_V_0_1, i16 %edge_embedding_weights_V_0_2, i16 %edge_embedding_weights_V_0_3, i7 %neighbor_tables_1_0, i71 %edge_attrs_1_0, i64 %degree_tables_1_0, i16 %edge_embedding_weights_V_0_4, i16 %edge_embedding_weights_V_0_5, i16 %edge_embedding_weights_V_0_6, i16 %edge_embedding_weights_V_0_7, i32 %num_of_edges_per_pe_1_1, i16 %edge_embedding_weights_V_1_0, i16 %edge_embedding_weights_V_1_1, i16 %edge_embedding_weights_V_1_2, i16 %edge_embedding_weights_V_1_3, i7 %neighbor_tables_1_1, i71 %edge_attrs_1_1, i64 %degree_tables_1_1, i16 %edge_embedding_weights_V_1_4, i16 %edge_embedding_weights_V_1_5, i16 %edge_embedding_weights_V_1_6, i16 %edge_embedding_weights_V_1_7, i32 %num_of_edges_per_pe_1_2, i16 %edge_embedding_weights_V_2_0, i16 %edge_embedding_weights_V_2_1, i16 %edge_embedding_weights_V_2_2, i16 %edge_embedding_weights_V_2_3, i7 %neighbor_tables_1_2, i71 %edge_attrs_1_2, i64 %degree_tables_1_2, i16 %edge_embedding_weights_V_2_4, i16 %edge_embedding_weights_V_2_5, i16 %edge_embedding_weights_V_2_6, i16 %edge_embedding_weights_V_2_7, i32 %num_of_edges_per_pe_1_3, i16 %edge_embedding_weights_V_3_0, i16 %edge_embedding_weights_V_3_1, i16 %edge_embedding_weights_V_3_2, i16 %edge_embedding_weights_V_3_3, i7 %neighbor_tables_1_3, i71 %edge_attrs_1_3, i64 %degree_tables_1_3, i16 %edge_embedding_weights_V_3_4, i16 %edge_embedding_weights_V_3_5, i16 %edge_embedding_weights_V_3_6, i16 %edge_embedding_weights_V_3_7
+
+]]></Node>
+<StgValue><ssdm name="call_ln97"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="19" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln88" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="205" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="3" op_38_bw="32" op_39_bw="8" op_40_bw="32" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="7" op_46_bw="71" op_47_bw="64" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="32" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="7" op_58_bw="71" op_59_bw="64" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="32" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="7" op_70_bw="71" op_71_bw="64" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="32" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="7" op_82_bw="71" op_83_bw="64" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16">
+<![CDATA[
+:0 %call_ln97 = call void @message_passing_all_pes, i16 %embeddings_0_0_0_0_0, i16 %embeddings_0_0_0_0_01, i16 %embeddings_0_0_0_0_012, i16 %embeddings_0_0_0_0_013, i16 %message, i16 %message4, i16 %message5, i16 %message6, i16 %message7, i16 %message8, i16 %message9, i16 %message10, i16 %message2, i16 %message211, i16 %message212, i16 %message213, i16 %message214, i16 %message215, i16 %message216, i16 %message217, i16 %message3, i16 %message318, i16 %message319, i16 %message320, i16 %message321, i16 %message322, i16 %message323, i16 %message324, i16 %message425, i16 %message426, i16 %message427, i16 %message428, i16 %message429, i16 %message430, i16 %message431, i16 %message432, i3 %layer_num_5, i32 %num_of_nodes_1, i8 %pes_per_node, i32 %num_of_edges_per_pe_1_0, i16 %edge_embedding_weights_V_0_0, i16 %edge_embedding_weights_V_0_1, i16 %edge_embedding_weights_V_0_2, i16 %edge_embedding_weights_V_0_3, i7 %neighbor_tables_1_0, i71 %edge_attrs_1_0, i64 %degree_tables_1_0, i16 %edge_embedding_weights_V_0_4, i16 %edge_embedding_weights_V_0_5, i16 %edge_embedding_weights_V_0_6, i16 %edge_embedding_weights_V_0_7, i32 %num_of_edges_per_pe_1_1, i16 %edge_embedding_weights_V_1_0, i16 %edge_embedding_weights_V_1_1, i16 %edge_embedding_weights_V_1_2, i16 %edge_embedding_weights_V_1_3, i7 %neighbor_tables_1_1, i71 %edge_attrs_1_1, i64 %degree_tables_1_1, i16 %edge_embedding_weights_V_1_4, i16 %edge_embedding_weights_V_1_5, i16 %edge_embedding_weights_V_1_6, i16 %edge_embedding_weights_V_1_7, i32 %num_of_edges_per_pe_1_2, i16 %edge_embedding_weights_V_2_0, i16 %edge_embedding_weights_V_2_1, i16 %edge_embedding_weights_V_2_2, i16 %edge_embedding_weights_V_2_3, i7 %neighbor_tables_1_2, i71 %edge_attrs_1_2, i64 %degree_tables_1_2, i16 %edge_embedding_weights_V_2_4, i16 %edge_embedding_weights_V_2_5, i16 %edge_embedding_weights_V_2_6, i16 %edge_embedding_weights_V_2_7, i32 %num_of_edges_per_pe_1_3, i16 %edge_embedding_weights_V_3_0, i16 %edge_embedding_weights_V_3_1, i16 %edge_embedding_weights_V_3_2, i16 %edge_embedding_weights_V_3_3, i7 %neighbor_tables_1_3, i71 %edge_attrs_1_3, i64 %degree_tables_1_3, i16 %edge_embedding_weights_V_3_4, i16 %edge_embedding_weights_V_3_5, i16 %edge_embedding_weights_V_3_6, i16 %edge_embedding_weights_V_3_7
+
+]]></Node>
+<StgValue><ssdm name="call_ln97"/></StgValue>
+</operation>
+
+<operation id="20" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln88" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="206" bw="0" op_0_bw="0">
+<![CDATA[
+:1 %br_ln0 = br void
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="21" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln88" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="208" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="1024" op_6_bw="64" op_7_bw="32" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16">
+<![CDATA[
+:0 %call_ln89 = call void @finalize, i16 %embeddings_0_0_0_0_0, i16 %embeddings_0_0_0_0_01, i16 %embeddings_0_0_0_0_012, i16 %embeddings_0_0_0_0_013, i1024 %mem, i64 %result_read, i32 %num_of_nodes_1, i16 %graph_pred_bias_V_0, i16 %graph_pred_weights_V_0_0, i16 %graph_pred_weights_V_0_1, i16 %graph_pred_weights_V_0_2, i16 %graph_pred_weights_V_0_3, i16 %graph_pred_weights_V_0_4, i16 %graph_pred_weights_V_0_5, i16 %graph_pred_weights_V_0_6, i16 %graph_pred_weights_V_0_7, i16 %graph_pred_weights_V_0_8, i16 %graph_pred_weights_V_0_9, i16 %graph_pred_weights_V_0_10, i16 %graph_pred_weights_V_0_11, i16 %graph_pred_weights_V_0_12, i16 %graph_pred_weights_V_0_13, i16 %graph_pred_weights_V_0_14, i16 %graph_pred_weights_V_0_15, i16 %graph_pred_weights_V_0_16, i16 %graph_pred_weights_V_0_17, i16 %graph_pred_weights_V_0_18, i16 %graph_pred_weights_V_0_19, i16 %graph_pred_weights_V_0_20, i16 %graph_pred_weights_V_0_21, i16 %graph_pred_weights_V_0_22, i16 %graph_pred_weights_V_0_23, i16 %graph_pred_weights_V_0_24, i16 %graph_pred_weights_V_0_25, i16 %graph_pred_weights_V_0_26, i16 %graph_pred_weights_V_0_27, i16 %graph_pred_weights_V_0_28, i16 %graph_pred_weights_V_0_29, i16 %graph_pred_weights_V_0_30, i16 %graph_pred_weights_V_0_31, i16 %graph_pred_weights_V_0_32, i16 %graph_pred_weights_V_0_33, i16 %graph_pred_weights_V_0_34, i16 %graph_pred_weights_V_0_35, i16 %graph_pred_weights_V_0_36, i16 %graph_pred_weights_V_0_37, i16 %graph_pred_weights_V_0_38, i16 %graph_pred_weights_V_0_39, i16 %graph_pred_weights_V_0_40, i16 %graph_pred_weights_V_0_41, i16 %graph_pred_weights_V_0_42, i16 %graph_pred_weights_V_0_43, i16 %graph_pred_weights_V_0_44, i16 %graph_pred_weights_V_0_45, i16 %graph_pred_weights_V_0_46, i16 %graph_pred_weights_V_0_47, i16 %graph_pred_weights_V_0_48, i16 %graph_pred_weights_V_0_49, i16 %graph_pred_weights_V_0_50, i16 %graph_pred_weights_V_0_51, i16 %graph_pred_weights_V_0_52, i16 %graph_pred_weights_V_0_53, i16 %graph_pred_weights_V_0_54, i16 %graph_pred_weights_V_0_55, i16 %graph_pred_weights_V_0_56, i16 %graph_pred_weights_V_0_57, i16 %graph_pred_weights_V_0_58, i16 %graph_pred_weights_V_0_59, i16 %graph_pred_weights_V_0_60, i16 %graph_pred_weights_V_0_61, i16 %graph_pred_weights_V_0_62, i16 %graph_pred_weights_V_0_63, i16 %graph_pred_weights_V_0_64, i16 %graph_pred_weights_V_0_65, i16 %graph_pred_weights_V_0_66, i16 %graph_pred_weights_V_0_67, i16 %graph_pred_weights_V_0_68, i16 %graph_pred_weights_V_0_69, i16 %graph_pred_weights_V_0_70, i16 %graph_pred_weights_V_0_71, i16 %graph_pred_weights_V_0_72, i16 %graph_pred_weights_V_0_73, i16 %graph_pred_weights_V_0_74, i16 %graph_pred_weights_V_0_75, i16 %graph_pred_weights_V_0_76, i16 %graph_pred_weights_V_0_77, i16 %graph_pred_weights_V_0_78, i16 %graph_pred_weights_V_0_79, i16 %graph_pred_weights_V_0_80, i16 %graph_pred_weights_V_0_81, i16 %graph_pred_weights_V_0_82, i16 %graph_pred_weights_V_0_83, i16 %graph_pred_weights_V_0_84, i16 %graph_pred_weights_V_0_85, i16 %graph_pred_weights_V_0_86, i16 %graph_pred_weights_V_0_87, i16 %graph_pred_weights_V_0_88, i16 %graph_pred_weights_V_0_89, i16 %graph_pred_weights_V_0_90, i16 %graph_pred_weights_V_0_91, i16 %graph_pred_weights_V_0_92, i16 %graph_pred_weights_V_0_93, i16 %graph_pred_weights_V_0_94, i16 %graph_pred_weights_V_0_95, i16 %graph_pred_weights_V_0_96, i16 %graph_pred_weights_V_0_97, i16 %graph_pred_weights_V_0_98, i16 %graph_pred_weights_V_0_99
+
+]]></Node>
+<StgValue><ssdm name="call_ln89"/></StgValue>
+</operation>
+
+<operation id="22" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln88" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="209" bw="0" op_0_bw="0">
+<![CDATA[
+:1 %br_ln89 = br void
+
+]]></Node>
+<StgValue><ssdm name="br_ln89"/></StgValue>
+</operation>
+
+<operation id="23" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="211" bw="0">
+<![CDATA[
+:0 %ret_ln98 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln98"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="24" st_id="4" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="208" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="1024" op_6_bw="64" op_7_bw="32" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16">
+<![CDATA[
+:0 %call_ln89 = call void @finalize, i16 %embeddings_0_0_0_0_0, i16 %embeddings_0_0_0_0_01, i16 %embeddings_0_0_0_0_012, i16 %embeddings_0_0_0_0_013, i1024 %mem, i64 %result_read, i32 %num_of_nodes_1, i16 %graph_pred_bias_V_0, i16 %graph_pred_weights_V_0_0, i16 %graph_pred_weights_V_0_1, i16 %graph_pred_weights_V_0_2, i16 %graph_pred_weights_V_0_3, i16 %graph_pred_weights_V_0_4, i16 %graph_pred_weights_V_0_5, i16 %graph_pred_weights_V_0_6, i16 %graph_pred_weights_V_0_7, i16 %graph_pred_weights_V_0_8, i16 %graph_pred_weights_V_0_9, i16 %graph_pred_weights_V_0_10, i16 %graph_pred_weights_V_0_11, i16 %graph_pred_weights_V_0_12, i16 %graph_pred_weights_V_0_13, i16 %graph_pred_weights_V_0_14, i16 %graph_pred_weights_V_0_15, i16 %graph_pred_weights_V_0_16, i16 %graph_pred_weights_V_0_17, i16 %graph_pred_weights_V_0_18, i16 %graph_pred_weights_V_0_19, i16 %graph_pred_weights_V_0_20, i16 %graph_pred_weights_V_0_21, i16 %graph_pred_weights_V_0_22, i16 %graph_pred_weights_V_0_23, i16 %graph_pred_weights_V_0_24, i16 %graph_pred_weights_V_0_25, i16 %graph_pred_weights_V_0_26, i16 %graph_pred_weights_V_0_27, i16 %graph_pred_weights_V_0_28, i16 %graph_pred_weights_V_0_29, i16 %graph_pred_weights_V_0_30, i16 %graph_pred_weights_V_0_31, i16 %graph_pred_weights_V_0_32, i16 %graph_pred_weights_V_0_33, i16 %graph_pred_weights_V_0_34, i16 %graph_pred_weights_V_0_35, i16 %graph_pred_weights_V_0_36, i16 %graph_pred_weights_V_0_37, i16 %graph_pred_weights_V_0_38, i16 %graph_pred_weights_V_0_39, i16 %graph_pred_weights_V_0_40, i16 %graph_pred_weights_V_0_41, i16 %graph_pred_weights_V_0_42, i16 %graph_pred_weights_V_0_43, i16 %graph_pred_weights_V_0_44, i16 %graph_pred_weights_V_0_45, i16 %graph_pred_weights_V_0_46, i16 %graph_pred_weights_V_0_47, i16 %graph_pred_weights_V_0_48, i16 %graph_pred_weights_V_0_49, i16 %graph_pred_weights_V_0_50, i16 %graph_pred_weights_V_0_51, i16 %graph_pred_weights_V_0_52, i16 %graph_pred_weights_V_0_53, i16 %graph_pred_weights_V_0_54, i16 %graph_pred_weights_V_0_55, i16 %graph_pred_weights_V_0_56, i16 %graph_pred_weights_V_0_57, i16 %graph_pred_weights_V_0_58, i16 %graph_pred_weights_V_0_59, i16 %graph_pred_weights_V_0_60, i16 %graph_pred_weights_V_0_61, i16 %graph_pred_weights_V_0_62, i16 %graph_pred_weights_V_0_63, i16 %graph_pred_weights_V_0_64, i16 %graph_pred_weights_V_0_65, i16 %graph_pred_weights_V_0_66, i16 %graph_pred_weights_V_0_67, i16 %graph_pred_weights_V_0_68, i16 %graph_pred_weights_V_0_69, i16 %graph_pred_weights_V_0_70, i16 %graph_pred_weights_V_0_71, i16 %graph_pred_weights_V_0_72, i16 %graph_pred_weights_V_0_73, i16 %graph_pred_weights_V_0_74, i16 %graph_pred_weights_V_0_75, i16 %graph_pred_weights_V_0_76, i16 %graph_pred_weights_V_0_77, i16 %graph_pred_weights_V_0_78, i16 %graph_pred_weights_V_0_79, i16 %graph_pred_weights_V_0_80, i16 %graph_pred_weights_V_0_81, i16 %graph_pred_weights_V_0_82, i16 %graph_pred_weights_V_0_83, i16 %graph_pred_weights_V_0_84, i16 %graph_pred_weights_V_0_85, i16 %graph_pred_weights_V_0_86, i16 %graph_pred_weights_V_0_87, i16 %graph_pred_weights_V_0_88, i16 %graph_pred_weights_V_0_89, i16 %graph_pred_weights_V_0_90, i16 %graph_pred_weights_V_0_91, i16 %graph_pred_weights_V_0_92, i16 %graph_pred_weights_V_0_93, i16 %graph_pred_weights_V_0_94, i16 %graph_pred_weights_V_0_95, i16 %graph_pred_weights_V_0_96, i16 %graph_pred_weights_V_0_97, i16 %graph_pred_weights_V_0_98, i16 %graph_pred_weights_V_0_99
+
+]]></Node>
+<StgValue><ssdm name="call_ln89"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

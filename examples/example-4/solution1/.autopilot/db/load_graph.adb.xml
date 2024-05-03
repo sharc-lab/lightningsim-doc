@@ -1,0 +1,1208 @@
+<stg><name>load_graph</name>
+
+
+<trans_list>
+
+<trans id="52" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="53" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="54" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="55" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="56" from="4" to="7">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="58" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="59" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="60" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+.lr.ph67:1 %num_of_nodes_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %num_of_nodes
+
+]]></Node>
+<StgValue><ssdm name="num_of_nodes_read"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="31" op_0_bw="32">
+<![CDATA[
+.lr.ph67:4 %empty = trunc i32 %num_of_nodes_read
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:5 %p_loc190 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="p_loc190"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:6 %p_loc189 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="p_loc189"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="31" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:7 %p_loc188 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="p_loc188"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="32" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:8 %p_loc = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="p_loc"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="34" bw="128" op_0_bw="64">
+<![CDATA[
+.lr.ph67:10 %full_pe_degree_tables = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="full_pe_degree_tables"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="36" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:12 %neighbor_table_offsets = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="neighbor_table_offsets"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="37" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:13 %neighbor_tables_offsets_0 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="neighbor_tables_offsets_0"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="38" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:14 %neighbor_tables_offsets_1 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="neighbor_tables_offsets_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="19" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="39" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:15 %neighbor_tables_offsets_2 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="neighbor_tables_offsets_2"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="20" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="40" bw="32" op_0_bw="64">
+<![CDATA[
+.lr.ph67:16 %neighbor_tables_offsets_3 = alloca i64 1
+
+]]></Node>
+<StgValue><ssdm name="neighbor_tables_offsets_3"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</operation>
+
+<operation id="21" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+.lr.ph67:17 %icmp_ln109 = icmp_sgt  i32 %num_of_nodes_read, i32 0
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln109"/></StgValue>
+</operation>
+
+<operation id="22" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="128" op_3_bw="32">
+<![CDATA[
+.lr.ph67:18 %call_ln0 = call void @load_graph_Pipeline_VITIS_LOOP_109_1, i32 %num_of_nodes_read, i128 %full_pe_degree_tables, i32 %degree_table_1
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="23" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="42" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="128" op_3_bw="32">
+<![CDATA[
+.lr.ph67:18 %call_ln0 = call void @load_graph_Pipeline_VITIS_LOOP_109_1, i32 %num_of_nodes_read, i128 %full_pe_degree_tables, i32 %degree_table_1
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="24" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+.lr.ph67:0 %num_of_edges_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %num_of_edges
+
+]]></Node>
+<StgValue><ssdm name="num_of_edges_read"/></StgValue>
+</operation>
+
+<operation id="25" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+.lr.ph67:3 %edge_list_in_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %edge_list_in
+
+]]></Node>
+<StgValue><ssdm name="edge_list_in_read"/></StgValue>
+</operation>
+
+<operation id="26" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="43" bw="7" op_0_bw="64">
+<![CDATA[
+.lr.ph67:19 %trunc_ln127 = trunc i64 %edge_list_in_read
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln127"/></StgValue>
+</operation>
+
+<operation id="27" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="44" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="128" op_3_bw="64" op_4_bw="7" op_5_bw="1024" op_6_bw="32" op_7_bw="0" op_8_bw="0">
+<![CDATA[
+.lr.ph67:20 %call_ln127 = call void @load_graph_Pipeline_VITIS_LOOP_122_3, i32 %num_of_edges_read, i128 %full_pe_degree_tables, i64 %edge_list_in_read, i7 %trunc_ln127, i1024 %mem, i32 %degree_table_1
+
+]]></Node>
+<StgValue><ssdm name="call_ln127"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="28" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="64" op_0_bw="64" op_1_bw="64">
+<![CDATA[
+.lr.ph67:2 %edge_attr_in_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %edge_attr_in
+
+]]></Node>
+<StgValue><ssdm name="edge_attr_in_read"/></StgValue>
+</operation>
+
+<operation id="29" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="33" bw="0" op_0_bw="0" op_1_bw="1024" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+.lr.ph67:9 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1024 %mem, void @empty_30, i32 0, i32 0, void @empty_8, i32 64, i32 1, void @empty_13, void @empty_12, void @empty_8, i32 16, i32 16, i32 16, i32 16, void @empty_8, void @empty_8
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="30" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="35" bw="0" op_0_bw="0" op_1_bw="128">
+<![CDATA[
+.lr.ph67:11 %specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i128 %full_pe_degree_tables
+
+]]></Node>
+<StgValue><ssdm name="specbramwithbyteenable_ln0"/></StgValue>
+</operation>
+
+<operation id="31" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="44" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="128" op_3_bw="64" op_4_bw="7" op_5_bw="1024" op_6_bw="32" op_7_bw="0" op_8_bw="0">
+<![CDATA[
+.lr.ph67:20 %call_ln127 = call void @load_graph_Pipeline_VITIS_LOOP_122_3, i32 %num_of_edges_read, i128 %full_pe_degree_tables, i64 %edge_list_in_read, i7 %trunc_ln127, i1024 %mem, i32 %degree_table_1
+
+]]></Node>
+<StgValue><ssdm name="call_ln127"/></StgValue>
+</operation>
+
+<operation id="32" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="45" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+.lr.ph67:21 %br_ln145 = br i1 %icmp_ln109, void %mergeST98, void %.lr.ph55.preheader
+
+]]></Node>
+<StgValue><ssdm name="br_ln145"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="33" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="47" bw="0" op_0_bw="0" op_1_bw="31" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="128" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="8" op_13_bw="32" op_14_bw="64" op_15_bw="64" op_16_bw="64" op_17_bw="64" op_18_bw="0" op_19_bw="0" op_20_bw="0" op_21_bw="0">
+<![CDATA[
+.lr.ph55.preheader:0 %call_ln0 = call void @load_graph_Pipeline_VITIS_LOOP_145_5, i31 %empty, i32 %neighbor_tables_offsets_3, i32 %neighbor_tables_offsets_2, i32 %neighbor_tables_offsets_1, i32 %neighbor_table_offsets, i128 %full_pe_degree_tables, i32 %neighbor_tables_offsets_0, i32 %p_loc, i32 %p_loc188, i32 %p_loc189, i32 %p_loc190, i8 %pes_per_node, i32 %degree_table_1, i64 %degree_tables_1_0, i64 %degree_tables_1_1, i64 %degree_tables_1_2, i64 %degree_tables_1_3
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="34" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="47" bw="0" op_0_bw="0" op_1_bw="31" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="128" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="8" op_13_bw="32" op_14_bw="64" op_15_bw="64" op_16_bw="64" op_17_bw="64" op_18_bw="0" op_19_bw="0" op_20_bw="0" op_21_bw="0">
+<![CDATA[
+.lr.ph55.preheader:0 %call_ln0 = call void @load_graph_Pipeline_VITIS_LOOP_145_5, i31 %empty, i32 %neighbor_tables_offsets_3, i32 %neighbor_tables_offsets_2, i32 %neighbor_tables_offsets_1, i32 %neighbor_table_offsets, i128 %full_pe_degree_tables, i32 %neighbor_tables_offsets_0, i32 %p_loc, i32 %p_loc188, i32 %p_loc189, i32 %p_loc190, i8 %pes_per_node, i32 %degree_table_1, i64 %degree_tables_1_0, i64 %degree_tables_1_1, i64 %degree_tables_1_2, i64 %degree_tables_1_3
+
+]]></Node>
+<StgValue><ssdm name="call_ln0"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="35" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="48" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+.lr.ph55.preheader:1 %p_loc_load = load i32 %p_loc
+
+]]></Node>
+<StgValue><ssdm name="p_loc_load"/></StgValue>
+</operation>
+
+<operation id="36" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="49" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+.lr.ph55.preheader:2 %p_loc188_load = load i32 %p_loc188
+
+]]></Node>
+<StgValue><ssdm name="p_loc188_load"/></StgValue>
+</operation>
+
+<operation id="37" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="50" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+.lr.ph55.preheader:3 %p_loc189_load = load i32 %p_loc189
+
+]]></Node>
+<StgValue><ssdm name="p_loc189_load"/></StgValue>
+</operation>
+
+<operation id="38" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="51" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+.lr.ph55.preheader:4 %p_loc190_load = load i32 %p_loc190
+
+]]></Node>
+<StgValue><ssdm name="p_loc190_load"/></StgValue>
+</operation>
+
+<operation id="39" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="52" bw="0" op_0_bw="0">
+<![CDATA[
+.lr.ph55.preheader:5 %br_ln0 = br void %mergeST98
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="40" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="62" bw="7" op_0_bw="64">
+<![CDATA[
+mergeST98:8 %trunc_ln185 = trunc i64 %edge_attr_in_read
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln185"/></StgValue>
+</operation>
+
+<operation id="41" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="63" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="64" op_3_bw="7" op_4_bw="1024" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="64" op_11_bw="7" op_12_bw="71" op_13_bw="7" op_14_bw="7" op_15_bw="7" op_16_bw="7" op_17_bw="71" op_18_bw="71" op_19_bw="71" op_20_bw="0" op_21_bw="0" op_22_bw="0" op_23_bw="0">
+<![CDATA[
+mergeST98:9 %call_ln185 = call void @load_graph_Pipeline_VITIS_LOOP_171_7, i32 %num_of_edges_read, i64 %edge_attr_in_read, i7 %trunc_ln185, i1024 %mem, i32 %neighbor_table_offsets, i32 %neighbor_tables_offsets_0, i32 %neighbor_tables_offsets_1, i32 %neighbor_tables_offsets_2, i32 %neighbor_tables_offsets_3, i64 %edge_list_in_read, i7 %trunc_ln127, i71 %edge_attrs_1_0, i7 %neighbor_tables_1_0, i7 %neighbor_tables_1_1, i7 %neighbor_tables_1_2, i7 %neighbor_tables_1_3, i71 %edge_attrs_1_1, i71 %edge_attrs_1_2, i71 %edge_attrs_1_3
+
+]]></Node>
+<StgValue><ssdm name="call_ln185"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="42" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="54" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+mergeST98:0 %num_of_edges_per_pe_1_0_new_0 = phi i32 %p_loc190_load, void %.lr.ph55.preheader, i32 0, void %.lr.ph67
+
+]]></Node>
+<StgValue><ssdm name="num_of_edges_per_pe_1_0_new_0"/></StgValue>
+</operation>
+
+<operation id="43" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="55" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+mergeST98:1 %num_of_edges_per_pe_1_1_new_0 = phi i32 %p_loc189_load, void %.lr.ph55.preheader, i32 0, void %.lr.ph67
+
+]]></Node>
+<StgValue><ssdm name="num_of_edges_per_pe_1_1_new_0"/></StgValue>
+</operation>
+
+<operation id="44" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="56" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+mergeST98:2 %num_of_edges_per_pe_1_2_new_0 = phi i32 %p_loc188_load, void %.lr.ph55.preheader, i32 0, void %.lr.ph67
+
+]]></Node>
+<StgValue><ssdm name="num_of_edges_per_pe_1_2_new_0"/></StgValue>
+</operation>
+
+<operation id="45" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="57" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+mergeST98:3 %num_of_edges_per_pe_1_3_new_0 = phi i32 %p_loc_load, void %.lr.ph55.preheader, i32 0, void %.lr.ph67
+
+]]></Node>
+<StgValue><ssdm name="num_of_edges_per_pe_1_3_new_0"/></StgValue>
+</operation>
+
+<operation id="46" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="58" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+mergeST98:4 %store_ln142 = store i32 %num_of_edges_per_pe_1_3_new_0, i32 %num_of_edges_per_pe_1_3
+
+]]></Node>
+<StgValue><ssdm name="store_ln142"/></StgValue>
+</operation>
+
+<operation id="47" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="59" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+mergeST98:5 %store_ln142 = store i32 %num_of_edges_per_pe_1_2_new_0, i32 %num_of_edges_per_pe_1_2
+
+]]></Node>
+<StgValue><ssdm name="store_ln142"/></StgValue>
+</operation>
+
+<operation id="48" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="60" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+mergeST98:6 %store_ln142 = store i32 %num_of_edges_per_pe_1_1_new_0, i32 %num_of_edges_per_pe_1_1
+
+]]></Node>
+<StgValue><ssdm name="store_ln142"/></StgValue>
+</operation>
+
+<operation id="49" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="61" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+mergeST98:7 %store_ln142 = store i32 %num_of_edges_per_pe_1_0_new_0, i32 %num_of_edges_per_pe_1_0
+
+]]></Node>
+<StgValue><ssdm name="store_ln142"/></StgValue>
+</operation>
+
+<operation id="50" st_id="8" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="63" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="64" op_3_bw="7" op_4_bw="1024" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="64" op_11_bw="7" op_12_bw="71" op_13_bw="7" op_14_bw="7" op_15_bw="7" op_16_bw="7" op_17_bw="71" op_18_bw="71" op_19_bw="71" op_20_bw="0" op_21_bw="0" op_22_bw="0" op_23_bw="0">
+<![CDATA[
+mergeST98:9 %call_ln185 = call void @load_graph_Pipeline_VITIS_LOOP_171_7, i32 %num_of_edges_read, i64 %edge_attr_in_read, i7 %trunc_ln185, i1024 %mem, i32 %neighbor_table_offsets, i32 %neighbor_tables_offsets_0, i32 %neighbor_tables_offsets_1, i32 %neighbor_tables_offsets_2, i32 %neighbor_tables_offsets_3, i64 %edge_list_in_read, i7 %trunc_ln127, i71 %edge_attrs_1_0, i7 %neighbor_tables_1_0, i7 %neighbor_tables_1_1, i7 %neighbor_tables_1_2, i7 %neighbor_tables_1_3, i71 %edge_attrs_1_1, i71 %edge_attrs_1_2, i71 %edge_attrs_1_3
+
+]]></Node>
+<StgValue><ssdm name="call_ln185"/></StgValue>
+</operation>
+
+<operation id="51" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="64" bw="0">
+<![CDATA[
+mergeST98:10 %ret_ln187 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln187"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="62" name="mem" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="mem"/></StgValue>
+</port>
+<port id="63" name="edge_list_in" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_list_in"/></StgValue>
+</port>
+<port id="64" name="edge_attr_in" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="edge_attr_in"/></StgValue>
+</port>
+<port id="65" name="num_of_nodes" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="num_of_nodes"/></StgValue>
+</port>
+<port id="66" name="num_of_edges" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="num_of_edges"/></StgValue>
+</port>
+<port id="67" name="degree_table_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="degree_table_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="68" name="pes_per_node" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="pes_per_node"/><MemPortTyVec>0 1 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="69" name="degree_tables_1_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="degree_tables_1_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="70" name="degree_tables_1_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="degree_tables_1_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="71" name="degree_tables_1_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="degree_tables_1_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="72" name="degree_tables_1_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="degree_tables_1_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="73" name="num_of_edges_per_pe_1_3" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="num_of_edges_per_pe_1_3"/></StgValue>
+</port>
+<port id="74" name="num_of_edges_per_pe_1_2" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="num_of_edges_per_pe_1_2"/></StgValue>
+</port>
+<port id="75" name="num_of_edges_per_pe_1_1" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="num_of_edges_per_pe_1_1"/></StgValue>
+</port>
+<port id="76" name="num_of_edges_per_pe_1_0" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="num_of_edges_per_pe_1_0"/></StgValue>
+</port>
+<port id="77" name="edge_attrs_1_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="edge_attrs_1_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="78" name="neighbor_tables_1_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="neighbor_tables_1_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="79" name="neighbor_tables_1_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="neighbor_tables_1_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="80" name="neighbor_tables_1_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="neighbor_tables_1_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="81" name="neighbor_tables_1_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="neighbor_tables_1_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="82" name="edge_attrs_1_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="edge_attrs_1_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="83" name="edge_attrs_1_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="edge_attrs_1_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="84" name="edge_attrs_1_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="edge_attrs_1_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="86" from="_ssdm_op_Read.ap_auto.i32" to="num_of_nodes_read" fromId="85" toId="9">
+</dataflow>
+<dataflow id="87" from="num_of_nodes" to="num_of_nodes_read" fromId="65" toId="9">
+</dataflow>
+<dataflow id="88" from="num_of_nodes_read" to="empty" fromId="9" toId="10">
+</dataflow>
+<dataflow id="90" from="StgValue_89" to="p_loc190" fromId="89" toId="11">
+</dataflow>
+<dataflow id="91" from="StgValue_89" to="p_loc189" fromId="89" toId="12">
+</dataflow>
+<dataflow id="92" from="StgValue_89" to="p_loc188" fromId="89" toId="13">
+</dataflow>
+<dataflow id="93" from="StgValue_89" to="p_loc" fromId="89" toId="14">
+</dataflow>
+<dataflow id="94" from="StgValue_89" to="full_pe_degree_tables" fromId="89" toId="15">
+</dataflow>
+<dataflow id="95" from="StgValue_89" to="neighbor_table_offsets" fromId="89" toId="16">
+</dataflow>
+<dataflow id="96" from="StgValue_89" to="neighbor_tables_offsets_0" fromId="89" toId="17">
+</dataflow>
+<dataflow id="97" from="StgValue_89" to="neighbor_tables_offsets_1" fromId="89" toId="18">
+</dataflow>
+<dataflow id="98" from="StgValue_89" to="neighbor_tables_offsets_2" fromId="89" toId="19">
+</dataflow>
+<dataflow id="99" from="StgValue_89" to="neighbor_tables_offsets_3" fromId="89" toId="20">
+</dataflow>
+<dataflow id="100" from="num_of_nodes_read" to="icmp_ln109" fromId="9" toId="21">
+</dataflow>
+<dataflow id="102" from="StgValue_101" to="icmp_ln109" fromId="101" toId="21">
+</dataflow>
+<dataflow id="104" from="load_graph_Pipeline_VITIS_LOOP_109_1" to="call_ln0" fromId="103" toId="22">
+</dataflow>
+<dataflow id="105" from="num_of_nodes_read" to="call_ln0" fromId="9" toId="22">
+</dataflow>
+<dataflow id="106" from="full_pe_degree_tables" to="call_ln0" fromId="15" toId="22">
+</dataflow>
+<dataflow id="107" from="degree_table_1" to="call_ln0" fromId="67" toId="22">
+</dataflow>
+<dataflow id="108" from="load_graph_Pipeline_VITIS_LOOP_109_1" to="call_ln0" fromId="103" toId="23">
+</dataflow>
+<dataflow id="109" from="num_of_nodes_read" to="call_ln0" fromId="9" toId="23">
+</dataflow>
+<dataflow id="110" from="full_pe_degree_tables" to="call_ln0" fromId="15" toId="23">
+</dataflow>
+<dataflow id="111" from="degree_table_1" to="call_ln0" fromId="67" toId="23">
+</dataflow>
+<dataflow id="112" from="_ssdm_op_Read.ap_auto.i32" to="num_of_edges_read" fromId="85" toId="24">
+</dataflow>
+<dataflow id="113" from="num_of_edges" to="num_of_edges_read" fromId="66" toId="24">
+</dataflow>
+<dataflow id="115" from="_ssdm_op_Read.ap_auto.i64" to="edge_list_in_read" fromId="114" toId="25">
+</dataflow>
+<dataflow id="116" from="edge_list_in" to="edge_list_in_read" fromId="63" toId="25">
+</dataflow>
+<dataflow id="117" from="edge_list_in_read" to="trunc_ln127" fromId="25" toId="26">
+</dataflow>
+<dataflow id="119" from="load_graph_Pipeline_VITIS_LOOP_122_3" to="call_ln127" fromId="118" toId="27">
+</dataflow>
+<dataflow id="120" from="num_of_edges_read" to="call_ln127" fromId="24" toId="27">
+</dataflow>
+<dataflow id="121" from="full_pe_degree_tables" to="call_ln127" fromId="15" toId="27">
+</dataflow>
+<dataflow id="122" from="edge_list_in_read" to="call_ln127" fromId="25" toId="27">
+</dataflow>
+<dataflow id="123" from="trunc_ln127" to="call_ln127" fromId="26" toId="27">
+</dataflow>
+<dataflow id="124" from="mem" to="call_ln127" fromId="62" toId="27">
+</dataflow>
+<dataflow id="125" from="degree_table_1" to="call_ln127" fromId="67" toId="27">
+</dataflow>
+<dataflow id="126" from="_ssdm_op_Read.ap_auto.i64" to="edge_attr_in_read" fromId="114" toId="28">
+</dataflow>
+<dataflow id="127" from="edge_attr_in" to="edge_attr_in_read" fromId="64" toId="28">
+</dataflow>
+<dataflow id="129" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="128" toId="29">
+</dataflow>
+<dataflow id="130" from="mem" to="specinterface_ln0" fromId="62" toId="29">
+</dataflow>
+<dataflow id="132" from="empty_30" to="specinterface_ln0" fromId="131" toId="29">
+</dataflow>
+<dataflow id="133" from="StgValue_101" to="specinterface_ln0" fromId="101" toId="29">
+</dataflow>
+<dataflow id="134" from="StgValue_101" to="specinterface_ln0" fromId="101" toId="29">
+</dataflow>
+<dataflow id="136" from="empty_8" to="specinterface_ln0" fromId="135" toId="29">
+</dataflow>
+<dataflow id="138" from="StgValue_137" to="specinterface_ln0" fromId="137" toId="29">
+</dataflow>
+<dataflow id="140" from="StgValue_139" to="specinterface_ln0" fromId="139" toId="29">
+</dataflow>
+<dataflow id="142" from="empty_13" to="specinterface_ln0" fromId="141" toId="29">
+</dataflow>
+<dataflow id="144" from="empty_12" to="specinterface_ln0" fromId="143" toId="29">
+</dataflow>
+<dataflow id="145" from="empty_8" to="specinterface_ln0" fromId="135" toId="29">
+</dataflow>
+<dataflow id="147" from="StgValue_146" to="specinterface_ln0" fromId="146" toId="29">
+</dataflow>
+<dataflow id="148" from="StgValue_146" to="specinterface_ln0" fromId="146" toId="29">
+</dataflow>
+<dataflow id="149" from="StgValue_146" to="specinterface_ln0" fromId="146" toId="29">
+</dataflow>
+<dataflow id="150" from="StgValue_146" to="specinterface_ln0" fromId="146" toId="29">
+</dataflow>
+<dataflow id="151" from="empty_8" to="specinterface_ln0" fromId="135" toId="29">
+</dataflow>
+<dataflow id="152" from="empty_8" to="specinterface_ln0" fromId="135" toId="29">
+</dataflow>
+<dataflow id="154" from="_ssdm_op_SpecBRAMWithByteEnable" to="specbramwithbyteenable_ln0" fromId="153" toId="30">
+</dataflow>
+<dataflow id="155" from="full_pe_degree_tables" to="specbramwithbyteenable_ln0" fromId="15" toId="30">
+</dataflow>
+<dataflow id="156" from="load_graph_Pipeline_VITIS_LOOP_122_3" to="call_ln127" fromId="118" toId="31">
+</dataflow>
+<dataflow id="157" from="num_of_edges_read" to="call_ln127" fromId="24" toId="31">
+</dataflow>
+<dataflow id="158" from="full_pe_degree_tables" to="call_ln127" fromId="15" toId="31">
+</dataflow>
+<dataflow id="159" from="edge_list_in_read" to="call_ln127" fromId="25" toId="31">
+</dataflow>
+<dataflow id="160" from="trunc_ln127" to="call_ln127" fromId="26" toId="31">
+</dataflow>
+<dataflow id="161" from="mem" to="call_ln127" fromId="62" toId="31">
+</dataflow>
+<dataflow id="162" from="degree_table_1" to="call_ln127" fromId="67" toId="31">
+</dataflow>
+<dataflow id="163" from="icmp_ln109" to="br_ln145" fromId="21" toId="32">
+</dataflow>
+<dataflow id="165" from="load_graph_Pipeline_VITIS_LOOP_145_5" to="call_ln0" fromId="164" toId="33">
+</dataflow>
+<dataflow id="166" from="empty" to="call_ln0" fromId="10" toId="33">
+</dataflow>
+<dataflow id="167" from="neighbor_tables_offsets_3" to="call_ln0" fromId="20" toId="33">
+</dataflow>
+<dataflow id="168" from="neighbor_tables_offsets_2" to="call_ln0" fromId="19" toId="33">
+</dataflow>
+<dataflow id="169" from="neighbor_tables_offsets_1" to="call_ln0" fromId="18" toId="33">
+</dataflow>
+<dataflow id="170" from="neighbor_table_offsets" to="call_ln0" fromId="16" toId="33">
+</dataflow>
+<dataflow id="171" from="full_pe_degree_tables" to="call_ln0" fromId="15" toId="33">
+</dataflow>
+<dataflow id="172" from="neighbor_tables_offsets_0" to="call_ln0" fromId="17" toId="33">
+</dataflow>
+<dataflow id="173" from="p_loc" to="call_ln0" fromId="14" toId="33">
+</dataflow>
+<dataflow id="174" from="p_loc188" to="call_ln0" fromId="13" toId="33">
+</dataflow>
+<dataflow id="175" from="p_loc189" to="call_ln0" fromId="12" toId="33">
+</dataflow>
+<dataflow id="176" from="p_loc190" to="call_ln0" fromId="11" toId="33">
+</dataflow>
+<dataflow id="177" from="pes_per_node" to="call_ln0" fromId="68" toId="33">
+</dataflow>
+<dataflow id="178" from="degree_table_1" to="call_ln0" fromId="67" toId="33">
+</dataflow>
+<dataflow id="179" from="degree_tables_1_0" to="call_ln0" fromId="69" toId="33">
+</dataflow>
+<dataflow id="180" from="degree_tables_1_1" to="call_ln0" fromId="70" toId="33">
+</dataflow>
+<dataflow id="181" from="degree_tables_1_2" to="call_ln0" fromId="71" toId="33">
+</dataflow>
+<dataflow id="182" from="degree_tables_1_3" to="call_ln0" fromId="72" toId="33">
+</dataflow>
+<dataflow id="183" from="load_graph_Pipeline_VITIS_LOOP_145_5" to="call_ln0" fromId="164" toId="34">
+</dataflow>
+<dataflow id="184" from="empty" to="call_ln0" fromId="10" toId="34">
+</dataflow>
+<dataflow id="185" from="neighbor_tables_offsets_3" to="call_ln0" fromId="20" toId="34">
+</dataflow>
+<dataflow id="186" from="neighbor_tables_offsets_2" to="call_ln0" fromId="19" toId="34">
+</dataflow>
+<dataflow id="187" from="neighbor_tables_offsets_1" to="call_ln0" fromId="18" toId="34">
+</dataflow>
+<dataflow id="188" from="neighbor_table_offsets" to="call_ln0" fromId="16" toId="34">
+</dataflow>
+<dataflow id="189" from="full_pe_degree_tables" to="call_ln0" fromId="15" toId="34">
+</dataflow>
+<dataflow id="190" from="neighbor_tables_offsets_0" to="call_ln0" fromId="17" toId="34">
+</dataflow>
+<dataflow id="191" from="p_loc" to="call_ln0" fromId="14" toId="34">
+</dataflow>
+<dataflow id="192" from="p_loc188" to="call_ln0" fromId="13" toId="34">
+</dataflow>
+<dataflow id="193" from="p_loc189" to="call_ln0" fromId="12" toId="34">
+</dataflow>
+<dataflow id="194" from="p_loc190" to="call_ln0" fromId="11" toId="34">
+</dataflow>
+<dataflow id="195" from="pes_per_node" to="call_ln0" fromId="68" toId="34">
+</dataflow>
+<dataflow id="196" from="degree_table_1" to="call_ln0" fromId="67" toId="34">
+</dataflow>
+<dataflow id="197" from="degree_tables_1_0" to="call_ln0" fromId="69" toId="34">
+</dataflow>
+<dataflow id="198" from="degree_tables_1_1" to="call_ln0" fromId="70" toId="34">
+</dataflow>
+<dataflow id="199" from="degree_tables_1_2" to="call_ln0" fromId="71" toId="34">
+</dataflow>
+<dataflow id="200" from="degree_tables_1_3" to="call_ln0" fromId="72" toId="34">
+</dataflow>
+<dataflow id="201" from="p_loc" to="p_loc_load" fromId="14" toId="35">
+</dataflow>
+<dataflow id="202" from="p_loc188" to="p_loc188_load" fromId="13" toId="36">
+</dataflow>
+<dataflow id="203" from="p_loc189" to="p_loc189_load" fromId="12" toId="37">
+</dataflow>
+<dataflow id="204" from="p_loc190" to="p_loc190_load" fromId="11" toId="38">
+</dataflow>
+<dataflow id="205" from="edge_attr_in_read" to="trunc_ln185" fromId="28" toId="40">
+</dataflow>
+<dataflow id="207" from="load_graph_Pipeline_VITIS_LOOP_171_7" to="call_ln185" fromId="206" toId="41">
+</dataflow>
+<dataflow id="208" from="num_of_edges_read" to="call_ln185" fromId="24" toId="41">
+</dataflow>
+<dataflow id="209" from="edge_attr_in_read" to="call_ln185" fromId="28" toId="41">
+</dataflow>
+<dataflow id="210" from="trunc_ln185" to="call_ln185" fromId="40" toId="41">
+</dataflow>
+<dataflow id="211" from="mem" to="call_ln185" fromId="62" toId="41">
+</dataflow>
+<dataflow id="212" from="neighbor_table_offsets" to="call_ln185" fromId="16" toId="41">
+</dataflow>
+<dataflow id="213" from="neighbor_tables_offsets_0" to="call_ln185" fromId="17" toId="41">
+</dataflow>
+<dataflow id="214" from="neighbor_tables_offsets_1" to="call_ln185" fromId="18" toId="41">
+</dataflow>
+<dataflow id="215" from="neighbor_tables_offsets_2" to="call_ln185" fromId="19" toId="41">
+</dataflow>
+<dataflow id="216" from="neighbor_tables_offsets_3" to="call_ln185" fromId="20" toId="41">
+</dataflow>
+<dataflow id="217" from="edge_list_in_read" to="call_ln185" fromId="25" toId="41">
+</dataflow>
+<dataflow id="218" from="trunc_ln127" to="call_ln185" fromId="26" toId="41">
+</dataflow>
+<dataflow id="219" from="edge_attrs_1_0" to="call_ln185" fromId="77" toId="41">
+</dataflow>
+<dataflow id="220" from="neighbor_tables_1_0" to="call_ln185" fromId="78" toId="41">
+</dataflow>
+<dataflow id="221" from="neighbor_tables_1_1" to="call_ln185" fromId="79" toId="41">
+</dataflow>
+<dataflow id="222" from="neighbor_tables_1_2" to="call_ln185" fromId="80" toId="41">
+</dataflow>
+<dataflow id="223" from="neighbor_tables_1_3" to="call_ln185" fromId="81" toId="41">
+</dataflow>
+<dataflow id="224" from="edge_attrs_1_1" to="call_ln185" fromId="82" toId="41">
+</dataflow>
+<dataflow id="225" from="edge_attrs_1_2" to="call_ln185" fromId="83" toId="41">
+</dataflow>
+<dataflow id="226" from="edge_attrs_1_3" to="call_ln185" fromId="84" toId="41">
+</dataflow>
+<dataflow id="227" from="p_loc190_load" to="num_of_edges_per_pe_1_0_new_0" fromId="38" toId="42">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="228" from="br_ln0" to="num_of_edges_per_pe_1_0_new_0" fromId="39" toId="42">
+</dataflow>
+<dataflow id="229" from="StgValue_101" to="num_of_edges_per_pe_1_0_new_0" fromId="101" toId="42">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="230" from="br_ln145" to="num_of_edges_per_pe_1_0_new_0" fromId="32" toId="42">
+</dataflow>
+<dataflow id="231" from="p_loc189_load" to="num_of_edges_per_pe_1_1_new_0" fromId="37" toId="43">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="232" from="br_ln0" to="num_of_edges_per_pe_1_1_new_0" fromId="39" toId="43">
+</dataflow>
+<dataflow id="233" from="StgValue_101" to="num_of_edges_per_pe_1_1_new_0" fromId="101" toId="43">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="234" from="br_ln145" to="num_of_edges_per_pe_1_1_new_0" fromId="32" toId="43">
+</dataflow>
+<dataflow id="235" from="p_loc188_load" to="num_of_edges_per_pe_1_2_new_0" fromId="36" toId="44">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="236" from="br_ln0" to="num_of_edges_per_pe_1_2_new_0" fromId="39" toId="44">
+</dataflow>
+<dataflow id="237" from="StgValue_101" to="num_of_edges_per_pe_1_2_new_0" fromId="101" toId="44">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="238" from="br_ln145" to="num_of_edges_per_pe_1_2_new_0" fromId="32" toId="44">
+</dataflow>
+<dataflow id="239" from="p_loc_load" to="num_of_edges_per_pe_1_3_new_0" fromId="35" toId="45">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="240" from="br_ln0" to="num_of_edges_per_pe_1_3_new_0" fromId="39" toId="45">
+</dataflow>
+<dataflow id="241" from="StgValue_101" to="num_of_edges_per_pe_1_3_new_0" fromId="101" toId="45">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln109" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="242" from="br_ln145" to="num_of_edges_per_pe_1_3_new_0" fromId="32" toId="45">
+</dataflow>
+<dataflow id="243" from="num_of_edges_per_pe_1_3_new_0" to="store_ln142" fromId="45" toId="46">
+</dataflow>
+<dataflow id="244" from="num_of_edges_per_pe_1_3" to="store_ln142" fromId="73" toId="46">
+</dataflow>
+<dataflow id="245" from="num_of_edges_per_pe_1_2_new_0" to="store_ln142" fromId="44" toId="47">
+</dataflow>
+<dataflow id="246" from="num_of_edges_per_pe_1_2" to="store_ln142" fromId="74" toId="47">
+</dataflow>
+<dataflow id="247" from="num_of_edges_per_pe_1_1_new_0" to="store_ln142" fromId="43" toId="48">
+</dataflow>
+<dataflow id="248" from="num_of_edges_per_pe_1_1" to="store_ln142" fromId="75" toId="48">
+</dataflow>
+<dataflow id="249" from="num_of_edges_per_pe_1_0_new_0" to="store_ln142" fromId="42" toId="49">
+</dataflow>
+<dataflow id="250" from="num_of_edges_per_pe_1_0" to="store_ln142" fromId="76" toId="49">
+</dataflow>
+<dataflow id="251" from="load_graph_Pipeline_VITIS_LOOP_171_7" to="call_ln185" fromId="206" toId="50">
+</dataflow>
+<dataflow id="252" from="num_of_edges_read" to="call_ln185" fromId="24" toId="50">
+</dataflow>
+<dataflow id="253" from="edge_attr_in_read" to="call_ln185" fromId="28" toId="50">
+</dataflow>
+<dataflow id="254" from="trunc_ln185" to="call_ln185" fromId="40" toId="50">
+</dataflow>
+<dataflow id="255" from="mem" to="call_ln185" fromId="62" toId="50">
+</dataflow>
+<dataflow id="256" from="neighbor_table_offsets" to="call_ln185" fromId="16" toId="50">
+</dataflow>
+<dataflow id="257" from="neighbor_tables_offsets_0" to="call_ln185" fromId="17" toId="50">
+</dataflow>
+<dataflow id="258" from="neighbor_tables_offsets_1" to="call_ln185" fromId="18" toId="50">
+</dataflow>
+<dataflow id="259" from="neighbor_tables_offsets_2" to="call_ln185" fromId="19" toId="50">
+</dataflow>
+<dataflow id="260" from="neighbor_tables_offsets_3" to="call_ln185" fromId="20" toId="50">
+</dataflow>
+<dataflow id="261" from="edge_list_in_read" to="call_ln185" fromId="25" toId="50">
+</dataflow>
+<dataflow id="262" from="trunc_ln127" to="call_ln185" fromId="26" toId="50">
+</dataflow>
+<dataflow id="263" from="edge_attrs_1_0" to="call_ln185" fromId="77" toId="50">
+</dataflow>
+<dataflow id="264" from="neighbor_tables_1_0" to="call_ln185" fromId="78" toId="50">
+</dataflow>
+<dataflow id="265" from="neighbor_tables_1_1" to="call_ln185" fromId="79" toId="50">
+</dataflow>
+<dataflow id="266" from="neighbor_tables_1_2" to="call_ln185" fromId="80" toId="50">
+</dataflow>
+<dataflow id="267" from="neighbor_tables_1_3" to="call_ln185" fromId="81" toId="50">
+</dataflow>
+<dataflow id="268" from="edge_attrs_1_1" to="call_ln185" fromId="82" toId="50">
+</dataflow>
+<dataflow id="269" from="edge_attrs_1_2" to="call_ln185" fromId="83" toId="50">
+</dataflow>
+<dataflow id="270" from="edge_attrs_1_3" to="call_ln185" fromId="84" toId="50">
+</dataflow>
+<dataflow id="271" from="icmp_ln109" to="StgValue_7" fromId="21" toId="7">
+</dataflow>
+<dataflow id="272" from="icmp_ln109" to="StgValue_4" fromId="21" toId="4">
+</dataflow>
+</dataflows>
+
+
+</stg>
