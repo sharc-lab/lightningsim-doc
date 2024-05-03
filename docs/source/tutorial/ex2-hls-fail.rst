@@ -3,7 +3,7 @@ When Cosimulation is Needed
 
 Sometimes HLS isn't able to figure out the latency of a kernel through static analysis. We will see one such example here.
 
-For this example, we will be using a Huffman encoding kernel that also comes from |Parallel Programming for FPGAs|_.
+For this example, we will be using an FFT kernel that also comes from |Parallel Programming for FPGAs|_.
 
 .. _Parallel Programming for FPGAs: https://arxiv.org/abs/1805.03648
 .. |Parallel Programming for FPGAs| raw:: html
