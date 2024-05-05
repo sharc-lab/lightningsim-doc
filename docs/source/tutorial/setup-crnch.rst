@@ -1,7 +1,7 @@
 Login to CRNCH Resources
 ========================
 
-To access the CRNCH resources, visit `synestia-ood.cc.gatech.edu <https://synestia-ood.cc.gatech.edu/>`_. You will be prompted to log in with your Georgia Tech credentials; please use the guest credentials provided to you.
+To access the CRNCH resources, visit `synestia-ood.cc.gatech.edu <https://synestia-ood.cc.gatech.edu/>`_. You will be prompted to log in with your Georgia Tech credentials; please reserve an account from `this spreadsheet <https://docs.google.com/spreadsheets/d/1-MYrWpV-soiENbQtPwdLAdj7NFgNX39WBqP-HPJZGuc/edit>`_ and use those credentials.
 
 Once you have logged in, you will be presented with the Open OnDemand web interface with tabs for both the Pynq board cluster (:guilabel:`Pynq-Z2`) and Synestia VMs (:guilabel:`Synth & Emu`):
 
