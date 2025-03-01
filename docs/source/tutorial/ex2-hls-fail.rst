@@ -20,8 +20,6 @@ Walkthrough
 
   lightningsim lightningsim-doc/examples/example-2/solution1
 
-Hold :kbd:`Ctrl` and click the link printed in the terminal to open the LightningSim UI in your default browser.
-
 **Step 3.** Within Vitis HLS, click the green play button to synthesize the design.
 
 Wait for synthesis to complete. *What does the synthesis report say about the latency of the kernel?*
@@ -30,7 +28,7 @@ Wait for synthesis to complete. *What does the synthesis report say about the la
 
 Wait for cosimulation to complete. *How long does it take to complete, compared to LightningSim?*
 
-**Step 5.** Switch to the :guilabel:`Overview` tab of LightningSim, and compare its results to the cosimulation results.
+**Step 5.** Switch back to the terminal where you ran LightningSim, and compare its results to the cosimulation results.
 
 .. note::
 
@@ -40,7 +38,7 @@ Wait for cosimulation to complete. *How long does it take to complete, compared 
 
   However, LightningSim still boasts 99.9% cycle-accuracy compared to cosimulation on Vitis HLS 2021.1 on a suite of 33 benchmarks. If you notice a large discrepancy between LightningSim and cosimulation on one of your projects, `please let us know <https://github.com/sharc-lab/LightningSim/issues/new>`_!
 
-**Step 6.** When you are finished with this example, close the Vitis HLS project by selecting :guilabel:`File` > :guilabel:`Close Project...`. Stop LightningSim by returning to the terminal you launched it from and interrupting the process with :kbd:`Ctrl` + :kbd:`C`.
+**Step 6.** When you are finished with this example, close the Vitis HLS project by selecting :guilabel:`File` > :guilabel:`Close Project...`.
 
 -----
 Recap
