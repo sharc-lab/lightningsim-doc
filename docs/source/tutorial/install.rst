@@ -33,14 +33,6 @@ We will be using AMD/Xilinx Vitis HLS 2021.1 for this tutorial.
 
   We are working on updating the AXI interface model in LightningSim for the latest versions of Vitis HLS.
 
-Run the following command to set up the environment for this version of Vitis HLS::
-
-  source ~/settings2021.1.sh
-
-.. note::
-
-  When using LightningSim on your own machine, you may need to use a command like the following instead::
+Run the following command, substituting your installation directory, to set up the environment for this version of Vitis HLS::
 
     source <Vitis HLS installation directory>/2021.1/settings64.sh
-
-  For in-person tutorial attendees using the CRNCH resources, we have symlinked this :code:`settings64.sh` file to :code:`~/settings2021.1.sh` for your convenience.

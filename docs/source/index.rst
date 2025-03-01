@@ -3,9 +3,6 @@
   :caption: Tutorial
 
   tutorial/index
-  tutorial/info
-  tutorial/getting-started
-  tutorial/setup-crnch
   tutorial/setup-local
   tutorial/install
   tutorial/examples

@@ -1,7 +1,5 @@
-Setup a Local Environment
-=========================
-
-If you do not have access to the CRNCH resources, you will need to setup your local environment to follow along with the tutorial.
+Setup Your Environment
+======================
 
 Only modern Linux distributions running on 64-bit x86 machines are supported at this time.
 
@@ -23,19 +21,24 @@ You will also need conda installed. Installation instructions are available at `
 
 We recommend using the `Miniconda installer <https://docs.anaconda.com/free/miniconda/>`_.
 
+.. note::
+
+    To the author's best knowledge, the conda environment we will create for LightningSim only supports POSIX-compliant shells such as bash or zsh, and does not support shells such as csh/tcsh. This is because the environment includes .sh activation scripts that do not run in non-POSIX shells, causing errors during later usage of LightningSim.
+
+    Please ensure you are using a POSIX-compliant shell such as bash or zsh.
+
 ---------------------
 Download the Examples
 ---------------------
 
-The example HLS designs used in this tutorial are available in the :code:`examples` directory within `the GitHub repository for this documentation <https://github.com/sharc-lab/lightningsim-doc>`_. You will need to clone this repository or download and extract its contents.
+The example HLS designs used in this tutorial are available in the :code:`examples` directory within `the GitHub repository for this documentation <https://github.com/sharc-lab/lightningsim-doc>`_. You can clone this repository::
 
------------------------------
-Potential Differences in Text
------------------------------
+  git clone --depth=1 https://github.com/sharc-lab/lightningsim-doc.git
 
-This tutorial is primarily targeting in-person attendees at FCCM 2024; as such, some of the tutorial text is customized for the environment provided there. Differences from your local setup are likely to be minor but are documented here for completeness.
+Or `download the ZIP <https://github.com/sharc-lab/lightningsim-doc/archive/refs/heads/main.zip>`_ and extract its contents to a location of your choice.
 
-* The tutorial text refers to launching Vitis HLS 2021.1 using a desktop shortcut. If such a shortcut does not exist in your environment, you can run the command :code:`vitis_hls` in a terminal instead. Make sure to do this in a **separate terminal** aside from the terminal in which you will install and run LightningSim during the tutorial.
-* The tutorial text assumes that the examples are located directly within the user's Linux home directory. This may differ depending on where you downloaded the examples.
+.. note::
 
-You are now ready to :doc:`try out LightningSim <install>`!
+    The remainder of the tutorial assumes you downloaded the repository to your current working directory and refers to the repository as :code:`lightningsim-doc`. If you downloaded the repository to a different location, please adjust the paths accordingly.
+
+You are now ready to :doc:`try out LightningSim! <install>`

@@ -14,11 +14,11 @@ For this example, we will be using an FFT kernel that also comes from |Parallel 
 Walkthrough
 -----------
 
-**Step 1.** Within Vitis HLS, click the :guilabel:`Open Project` link again. Navigate to :code:`~/examples/example-2` and click :guilabel:`Open`.
+**Step 1.** Within Vitis HLS, click the :guilabel:`Open Project` link again. Navigate to :code:`lightningsim-doc/examples/example-2` and click :guilabel:`Open`.
 
-**Step 2.** Within the terminal where you activated the :code:`lightningsim` environment, run::
+**Step 2.** This time, let's try LightningSim's CLI mode (the default when not passing :code:`--gui`). Within the terminal where you activated the :code:`lightningsim` environment, run::
 
-  lightningsim ~/examples/example-2/solution1
+  lightningsim lightningsim-doc/examples/example-2/solution1
 
 Hold :kbd:`Ctrl` and click the link printed in the terminal to open the LightningSim UI in your default browser.
 

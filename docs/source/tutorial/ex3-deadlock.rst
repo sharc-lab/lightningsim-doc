@@ -9,11 +9,15 @@ This example is a modified version of a simple HLS dataflow example from `Xilinx
 Walkthrough
 -----------
 
-**Step 1.** Within Vitis HLS, click the :guilabel:`Open Project` link again. Navigate to :code:`~/examples/example-3` and click :guilabel:`Open`.
+**Step 1.** Within Vitis HLS, click the :guilabel:`Open Project` link again. Navigate to :code:`lightningsim-doc/examples/example-3` and click :guilabel:`Open`.
 
 **Step 2.** Within the terminal where you activated the :code:`lightningsim` environment, run::
 
-  lightningsim ~/examples/example-3/solution1
+  lightningsim --gui lightningsim-doc/examples/example-3/solution1
+
+.. note::
+
+  LightningSim's CLI mode currently does not support analyzing and adjusting FIFO depths. If a deadlock occurs, the LightningSim CLI will prompt you to use the GUI. `The issue is tracked here; <https://github.com/sharc-lab/LightningSim/issues/4>`_ we hope to add FIFO analysis features to the CLI version soon.
 
 Hold :kbd:`Ctrl` and click the link printed in the terminal to open the LightningSim UI in your default browser.
 

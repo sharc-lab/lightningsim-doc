@@ -1,5 +1,5 @@
-End-to-End Flow
-===============
+Side-by-Side Workflow
+=====================
 
 We will now demonstrate the end-to-end LightningSim workflow with a Vitis HLS project implementing a simple matrix multiplication kernel. This example is derived from |Parallel Programming for FPGAs|_.
 
@@ -12,9 +12,13 @@ We will now demonstrate the end-to-end LightningSim workflow with a Vitis HLS pr
 Walkthrough
 -----------
 
-**Step 1.** Launch Vitis HLS 2021.1 from the desktop shortcut.
+**Step 1.** Launch the Vitis HLS 2021.1 GUI by running::
 
-**Step 2.** Click the :guilabel:`Open Project` link. Navigate to :code:`~/examples/example-1` and click :guilabel:`Open` to open the project.
+  vitis_hls >/dev/null &
+
+(The trailing :code:`&` runs the process in the background, and :code:`>/dev/null` suppresses the terminal output.)
+
+**Step 2.** Click the :guilabel:`Open Project` link. Navigate to :code:`lightningsim-doc/examples/example-1` and click :guilabel:`Open` to open the project.
 
 Notice that the project has already been set up with a source file :code:`matrixmultiplication.cpp` as well as testbench files :code:`matrixmultiplication-top.cpp` and :code:`matrixmultiplication.gold.dat`. These are the key ingredients for developing designs in Vitis HLS.
 
@@ -22,13 +26,13 @@ Notice that the project has already been set up with a source file :code:`matrix
 
 In the terminal in which you activated the :code:`lightningsim` conda environment, run::
 
-  lightningsim ~/examples/example-1/solution1
+  lightningsim --gui lightningsim-doc/examples/example-1/solution1
 
 .. note::
 
   Make sure you always use the full path to the project solution, not just the path to the project itself!
 
-LightningSim will start and print the URL to the LightningSim server: :code:`http://127.0.0.1:8080`. Hold :kbd:`Ctrl` and click the link in the terminal to open the LightningSim UI in your default browser.
+LightningSim will start in GUI mode and print the URL to the LightningSim server: :code:`http://127.0.0.1:8080`. Hold :kbd:`Ctrl` and click the link in the terminal to open the LightningSim UI in your default browser.
 
 By default, LightningSim will wait for you to start a synthesis run before running simulation. Arrange the windows so that you can see both Vitis HLS and LightningSim side-by-side.
 

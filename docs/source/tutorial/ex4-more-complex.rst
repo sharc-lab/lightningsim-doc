@@ -9,15 +9,17 @@ These designs can take over an hour to synthesize and simulate; therefore, we ha
 Walkthrough
 -----------
 
-**Step 1.** Within Vitis HLS, click the :guilabel:`Open Project` link again. Navigate to :code:`~/examples/example-4` and click :guilabel:`Open`.
+**Step 1.** Within Vitis HLS, click the :guilabel:`Open Project` link again. Navigate to :code:`lightningsim-doc/examples/example-4` and click :guilabel:`Open`.
 
 **Step 2.** Within the terminal where you activated the :code:`lightningsim` environment, run::
 
-  lightningsim --skip-wait-for-synthesis ~/examples/example-4/solution1
+  lightningsim --gui --skip-wait-for-synthesis lightningsim-doc/examples/example-4/solution1
 
 .. note::
 
   As the name suggests, the :code:`--skip-wait-for-synthesis` flag will skip the "waiting for synthesis" step and immediately start running the simulation. This has the same effect as clicking the :guilabel:`(skip)` link on this step in the LightningSim UI.
+
+  In CLI mode, this behavior is the default.
 
 Hold :kbd:`Ctrl` and click the link printed in the terminal to open the LightningSim UI in your default browser.
 

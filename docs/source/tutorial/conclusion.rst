@@ -3,15 +3,6 @@ Conclusion
 
 Congratulations on reaching the end of the LightningSim tutorial. You are now a LightningSim expert!
 
-**FCCM 2024 tutorial attendees:** We will now take a 10-minute break (assuming time allows). If anyone needs help troubleshooting any part of the LightningSim tutorial, we will be happy to help at this time.
-
-We will then move on to the second half of the tutorial session, where we will introduce the RealProbe tool for easy on-board profiling of HLS designs.
-
-|Continue to the RealProbe tutorial|_
-
-.. _Continue to the RealProbe tutorial: https://realprobe-doc.readthedocs.io/en/latest/tutorial/tutorial.html
-.. |Continue to the RealProbe tutorial| replace:: **Click here to continue to the RealProbe tutorial!**
-
 ---------
 Resources
 ---------

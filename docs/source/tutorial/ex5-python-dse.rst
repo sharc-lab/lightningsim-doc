@@ -15,7 +15,7 @@ Walkthrough
 
 **Step 2.** Change directories into the example folder and start JupyterLab::
 
-  cd ~/examples/example-5
+  cd lightningsim-doc/examples/example-5
   jupyter lab
 
 This will automatically open your browser to JupyterLab.
